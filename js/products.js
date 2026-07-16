@@ -584,7 +584,7 @@ function openSpecModal(productId) {
       <div style="margin-top: 12px; line-height: 1.5; color: var(--gray-300);">${product.description}</div>
     </div>
     <div style="margin-top: 20px;">
-      <h4 style="font-family:'Outfit'; margin-bottom: 8px; font-size: 1rem; color: #fff;">Key Technical Highlights</h4>
+      <h4 style="font-family:'Plus Jakarta Sans',sans-serif; margin-bottom: 8px; font-size: 1rem; color: #fff;">Key Technical Highlights</h4>
       <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:6px; font-size:0.85rem; color:var(--gray-300);">
         ${featuresHTML}
       </ul>

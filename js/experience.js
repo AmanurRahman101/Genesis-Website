@@ -170,7 +170,7 @@ function renderWorkOrders(orders) {
     card.innerHTML = `
       <div class="work-order-visual-box" style="background: ${bgGrad}; display:flex; flex-direction:column; justify-content:center; align-items:center; padding: 20px;">
         <div class="work-order-value-tag">${order.totalValue.includes('Over') ? 'Over BDT ' + order.rawCrore + ' Cr' : 'BDT ' + order.rawCrore + ' Cr'}</div>
-        <div style="font-family:'Outfit'; font-size:0.85rem; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; z-index:1; margin-top:20px;">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:0.85rem; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; z-index:1; margin-top:20px;">
           ${order.year}
         </div>
       </div>

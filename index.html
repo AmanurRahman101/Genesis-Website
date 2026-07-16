@@ -5,274 +5,347 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Genesis Trading Co. | A Newer Approach to Health Technology</title>
   <meta name="description" content="Established in 2015, Genesis Trading Co. is Bangladesh's premier supplier of world-class medical equipment and consumables. Official distributor of 90+ global brands.">
-  
+
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Franken UI -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@1.1.0/dist/css/core.min.css">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Instrument Serif', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ink: '#0f172a',
+            muted: '#64748b',
+            skyline: { soft: '#cfe4f7', mist: '#eaf4fc', deep: '#9ec5e8' },
+            brand: '#008cd6',
+          },
+          borderRadius: {
+            '4xl': '2rem',
+          },
+        },
+      },
+      corePlugins: {
+        preflight: false,
+      },
+    };
+  </script>
+
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="font-sans antialiased">
 
-  <!-- Sticky Header -->
-  <header>
-    <div class="container nav-container">
-      <a href="index.html" class="logo-wrapper">
-        <img src="images/logo.svg" alt="Genesis Trading Logo">
-      </a>
-      
-      <nav aria-label="Main Navigation">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="products.html" class="nav-link">Products</a></li>
-          <li><a href="experience.html" class="nav-link">Experience</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-      
-      <button class="menu-toggle" aria-label="Toggle navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <!-- Glass Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-shell">
+        <a href="index.html" class="logo-wrapper" aria-label="Genesis Trading Co. home">
+          <img src="images/logo.svg" alt="Genesis Trading Logo">
+        </a>
+
+        <nav aria-label="Main Navigation">
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="products.html" class="nav-link">Products</a></li>
+            <li><a href="experience.html" class="nav-link">Experience</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <a href="contact.html" class="btn btn-primary nav-cta uk-btn uk-btn-primary">Get Started</a>
+
+        <button class="menu-toggle" aria-label="Toggle navigation menu" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
   <main>
-    <section class="hero-section" id="hero-banner">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-tagline">Genesis Trading Co.</div>
-          <h1>Pioneering Advanced Medical Diagnostics & Equipment</h1>
-          <p>
-            "A Newer Approach to Health Technology." Established in 2015, we are Bangladesh's leading supplier of world-class medical machinery, consumables, and laboratory automation, backed by a nationwide network of certified service engineers.
-          </p>
-          <div class="hero-actions">
-            <a href="products.html" class="btn btn-primary">
-              Browse Products
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    <!-- Hero -->
+    <section class="hero-lalilo" id="hero-banner">
+      <div class="hero-bubbles" aria-hidden="true">
+        <div class="bubble bubble-1 bubble-float"></div>
+        <div class="bubble bubble-2 bubble-float bubble-float-delay"></div>
+        <div class="bubble bubble-3 bubble-float bubble-float-delay-2"></div>
+        <div class="bubble bubble-4 bubble-float"></div>
+        <div class="bubble bubble-5 bubble-float bubble-float-delay"></div>
+      </div>
+
+      <div class="hero-inner">
+        <p class="hero-brand reveal">Genesis Trading Co.</p>
+        <h1 class="reveal">Patients first.<br>Equipment that delivers.</h1>
+        <p class="hero-lead reveal">
+          A newer approach to health technology. Since 2015 we have supplied world-class medical machinery, consumables, and laboratory automation across Bangladesh — backed by a nationwide network of certified engineers.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="products.html" class="btn btn-primary uk-btn uk-btn-primary">
+            Browse Products
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="contact.html" class="btn btn-secondary uk-btn uk-btn-default">Request Quote</a>
+        </div>
+      </div>
+
+      <div class="hero-cloudscape reveal" aria-hidden="true">
+        <svg viewBox="0 0 920 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="150" rx="140" ry="48" fill="white" fill-opacity="0.85"/>
+          <ellipse cx="280" cy="130" rx="90" ry="40" fill="white" fill-opacity="0.9"/>
+          <ellipse cx="460" cy="145" rx="160" ry="55" fill="white"/>
+          <ellipse cx="620" cy="125" rx="100" ry="42" fill="white" fill-opacity="0.92"/>
+          <ellipse cx="780" cy="148" rx="130" ry="46" fill="white" fill-opacity="0.88"/>
+          <rect x="390" y="70" width="140" height="90" rx="18" fill="white" fill-opacity="0.95" stroke="#dbeafe" stroke-width="2"/>
+          <rect x="410" y="90" width="100" height="8" rx="4" fill="#bfdbfe"/>
+          <rect x="410" y="108" width="70" height="8" rx="4" fill="#e2e8f0"/>
+          <rect x="410" y="126" width="85" height="8" rx="4" fill="#e2e8f0"/>
+          <circle cx="500" cy="55" r="18" fill="#008cd6" fill-opacity="0.15"/>
+          <path d="M492 55h16M500 47v16" stroke="#008cd6" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-band" id="nature-of-business">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-number"><span class="animate-number" data-target="12">0</span>+</div>
+          <div class="stat-label">Years of Experience</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number"><span class="animate-number" data-target="110">0</span>+</div>
+          <div class="stat-label">Workforce Employees</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number"><span class="animate-number" data-target="60">0</span>+</div>
+          <div class="stat-label">Certified Engineers</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number"><span class="animate-number" data-target="20">0</span>+</div>
+          <div class="stat-label">Support Staff</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Saving hours / core business -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-title-wrapper reveal">
+          <span class="section-tag">Core Business</span>
+          <h2 class="section-title">Saving clinics hours every day</h2>
+          <p class="section-subtitle">From import to installation, Genesis keeps diagnostic floors running — so clinicians can focus on patients, not procurement paperwork.</p>
+        </div>
+
+        <div class="bento-grid">
+          <article class="soft-card bento-wide reveal">
+            <div class="icon-bubble"><i data-lucide="package-check"></i></div>
+            <h3 class="mt-4 mb-2 font-sans text-xl font-bold tracking-normal text-ink">World-class equipment &amp; consumables</h3>
+            <p class="text-sm leading-relaxed">Strategic gateway for advanced health technology in Bangladesh — importing, distributing, installing, and servicing critical machinery for public and private facilities.</p>
+            <div class="feature-mock">
+              <div class="flex items-center gap-3 rounded-2xl bg-skyline-mist px-4 py-3">
+                <i data-lucide="shield-check" class="text-brand" style="width:20px;height:20px;stroke-width:1.5"></i>
+                <span class="text-sm font-semibold text-ink">90+ official global brand partnerships</span>
+              </div>
+            </div>
+            <a href="about.html" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-ink">
+              Learn more <i data-lucide="chevron-right" style="width:16px;height:16px;stroke-width:1.5"></i>
             </a>
-            <a href="contact.html" class="btn btn-secondary">Request Quote</a>
-          </div>
-        </div>
-        
-        <div class="hero-visual">
-          <div class="heartbeat-canvas">
-            <svg class="floating-heart" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <path d="M 50 88 C 50 88 12 55 12 32 C 12 15 25 5 39 5 C 48 5 50 12 50 12 C 50 12 52 5 61 5 C 75 5 88 15 88 32 C 88 55 50 88 50 88 Z" fill="var(--primary)" />
-              <path d="M 2 57 L 25 57" stroke="#e92330" stroke-width="5" stroke-linecap="round" fill="none" />
-              <path d="M 75 57 L 98 57" stroke="#e92330" stroke-width="5" stroke-linecap="round" fill="none" />
-              <path d="M 25 57 L 30 57 L 36 69 L 43 19 L 50 89 L 57 39 L 63 67 L 68 57 L 75 57" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" fill="none" />
-            </svg>
-          </div>
+          </article>
+
+          <article class="soft-card bento-wide reveal">
+            <div class="icon-bubble"><i data-lucide="wrench"></i></div>
+            <h3 class="mt-4 mb-2 font-sans text-xl font-bold tracking-normal text-ink">Certified installation &amp; service</h3>
+            <p class="text-sm leading-relaxed">Operations follow local and international quality standards, overseen with national maintenance and clinical bodies — with genuine spares ready locally.</p>
+            <div class="feature-mock">
+              <div class="flex w-full flex-col gap-2">
+                <div class="flex items-center justify-between rounded-xl bg-white px-3 py-2 text-sm shadow-sm">
+                  <span class="text-muted">On-site response</span>
+                  <span class="font-semibold text-ink">&lt; 24 hours</span>
+                </div>
+                <div class="flex items-center justify-between rounded-xl bg-white px-3 py-2 text-sm shadow-sm">
+                  <span class="text-muted">Helpline</span>
+                  <span class="font-semibold text-ink">24 / 7</span>
+                </div>
+              </div>
+            </div>
+            <a href="experience.html" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-ink">
+              Learn more <i data-lucide="chevron-right" style="width:16px;height:16px;stroke-width:1.5"></i>
+            </a>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Stats Banner & Nature of Business -->
-    <section class="section-padding" id="nature-of-business" style="padding-top: 0;">
-      <div class="container">
-        
-        <!-- Stats Banner -->
-        <div class="stats-banner">
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-number"><span class="animate-number" data-target="12">0</span>+</div>
-              <div class="stat-label">Years of Experience</div>
-            </div>
-            
-            <div class="stat-card">
-              <div class="stat-number"><span class="animate-number" data-target="110">0</span>+</div>
-              <div class="stat-label">Workforce Employees</div>
-            </div>
-            
-            <div class="stat-card">
-              <div class="stat-number"><span class="animate-number" data-target="60">0</span>+</div>
-              <div class="stat-label">Certified Engineers</div>
-            </div>
-            
-            <div class="stat-card">
-              <div class="stat-number"><span class="animate-number" data-target="20">0</span>+</div>
-              <div class="stat-label">Support Staffs</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Business Nature Content -->
-        <div class="business-nature-block">
-          <div class="business-nature-text">
-            <span class="section-tag">Core Business</span>
-            <h3>Supplier of Worldclass Medical Equipment & Consumables</h3>
-            <p style="margin-bottom: 24px; color: var(--gray-600);">
-              Genesis Trading Co. acts as a strategic gateway for advanced health technology in Bangladesh, importing, distributing, installing, and servicing critical machinery for public and private healthcare facilities.
-            </p>
-            <a href="about.html" class="btn btn-secondary">Company Profile</a>
-          </div>
-          
-          <div class="business-nature-bullets">
-            <div class="bullet-item">
-              <div class="bullet-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              </div>
-              <div class="bullet-desc">
-                <strong>Official Distributor of 90+ Renowned Brands</strong>
-                <span>We represent leading diagnostic and clinical technology developers from the USA, Korea, Italy, Turkiye, Japan, Germany, and Switzerland.</span>
-              </div>
-            </div>
-
-            <div class="bullet-item">
-              <div class="bullet-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              </div>
-              <div class="bullet-desc">
-                <strong>Certified Medical Equipment Installation</strong>
-                <span>Our operations follow local and international quality standards, overseen directly by national maintenance and clinical bodies.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Corporate Summary -->
+    <!-- Feature grid -->
     <section class="section-padding bg-slate-section" id="about-summary">
-      <div class="container about-grid">
-        <div>
-          <span class="section-tag">Corporate Profile</span>
-          <h2>A Newer Approach to Health Technology</h2>
-          <p style="margin-bottom: 20px; color: var(--gray-600);">
-            Genesis Trading Co. represents the next generation of clinical infrastructure support. We operate as a high-end medical equipment importer, installation contractor, and logistics provider, bridging international manufacturers and domestic clinics.
-          </p>
-          <a href="about.html" class="btn btn-secondary">Learn More About Us</a>
-        </div>
-        <div>
-          <div class="card-panel" style="padding: 30px;">
-            <h3 style="margin-bottom: 12px; font-family:'Outfit'">Our Driving Forces</h3>
-            <ul style="display:flex; flex-direction:column; gap:12px; font-size:0.9rem; color:var(--gray-600);">
-              <li><strong>✓ Core Vision</strong>: Customers receive the best selection, quality, and support.</li>
-              <li><strong>✓ Ethics & Commitment</strong>: Operating transparently in healthcare tenders.</li>
-              <li><strong>✓ Strategic Growth</strong>: Growing together with our manufacturing partners and clinical operators.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Partner Brand Loop -->
-    <section class="partners-section" id="official-partners">
-      <h2>Our Official Partner Brands</h2>
-      <div class="slider-container">
-        <div class="slider-track" id="partners-slider-track">
-          <!-- Logo track populated dynamically in main.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Nationwide Engineering Service Support Network -->
-    <section class="section-padding service-support-section" id="engineering-network">
       <div class="container">
-        
+        <div class="section-title-wrapper reveal">
+          <span class="section-tag">Why Genesis</span>
+          <h2 class="section-title">A newer approach to health technology</h2>
+          <p class="section-subtitle">High-end medical equipment import, installation, and logistics — bridging international manufacturers and domestic clinics.</p>
+        </div>
+
+        <div class="bento-grid">
+          <article class="soft-card bento-third reveal">
+            <div class="icon-bubble"><i data-lucide="eye"></i></div>
+            <h3 class="mt-4 mb-2 font-sans text-lg font-bold tracking-normal text-ink">Core Vision</h3>
+            <p class="text-sm">Customers receive the best selection, quality, and value — supported by fully functional service teams.</p>
+          </article>
+          <article class="soft-card bento-third reveal">
+            <div class="icon-bubble"><i data-lucide="scale"></i></div>
+            <h3 class="mt-4 mb-2 font-sans text-lg font-bold tracking-normal text-ink">Ethics &amp; Commitment</h3>
+            <p class="text-sm">Transparent practices in healthcare tenders, with uncompromising standards for products that impact lives.</p>
+          </article>
+          <article class="soft-card bento-third reveal">
+            <div class="icon-bubble"><i data-lucide="trending-up"></i></div>
+            <h3 class="mt-4 mb-2 font-sans text-lg font-bold tracking-normal text-ink">Strategic Growth</h3>
+            <p class="text-sm">Growing together with manufacturing partners and clinical operators across Bangladesh.</p>
+          </article>
+          <article class="soft-card bento-half reveal">
+            <div class="icon-bubble"><i data-lucide="flask-conical"></i></div>
+            <h3 class="mt-4 mb-2 font-sans text-lg font-bold tracking-normal text-ink">In Vitro Diagnostics</h3>
+            <p class="text-sm">CLIA, hematology, biochemistry, ESR, electrolyte, urinalysis, POCT, blood gas, HbA1c, RT-PCR, and rapid test kits.</p>
+          </article>
+          <article class="soft-card bento-half reveal">
+            <div class="icon-bubble"><i data-lucide="scan"></i></div>
+            <h3 class="mt-4 mb-2 font-sans text-lg font-bold tracking-normal text-ink">Imaging &amp; Life Support</h3>
+            <p class="text-sm">CT, MRI, C-Arm, X-ray, mammography, ultrasound, dialysis systems, monitors, ventilators, and infusion pumps.</p>
+          </article>
+        </div>
+
+        <div class="mt-10 text-center reveal">
+          <a href="about.html" class="btn btn-secondary uk-btn uk-btn-default">Company Profile</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="partners-section" id="official-partners">
+      <h2 class="reveal">Our official partner brands</h2>
+      <div class="slider-container">
+        <div class="slider-track" id="partners-slider-track"></div>
+      </div>
+    </section>
+
+    <!-- Nationwide network -->
+    <section class="section-padding" id="engineering-network">
+      <div class="container">
         <div class="support-network-grid">
-          
-          <!-- Map Column -->
-          <div class="map-visual-wrapper">
-            <svg class="map-svg-placeholder" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" style="background-color: #f1f5f9;">
-              <path d="M 120 40 C 140 10 240 10 260 40 C 270 60 270 90 280 110 C 290 120 330 140 330 160 C 330 180 300 210 320 250 C 330 280 380 340 380 390 C 380 430 350 480 320 480 C 280 480 260 400 240 400 C 220 400 210 440 180 450 C 140 460 100 450 80 410 C 60 380 70 330 70 300 C 70 280 40 250 40 220 C 40 180 80 140 80 110 C 80 80 100 60 120 40 Z" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2" />
-            </svg>
-            
-            <div class="map-dots-network">
-              <div class="hub-pulse primary-hub hub-dhaka" title="Dhaka Central Hub"></div>
-              <div class="hub-pulse hub-sylhet" title="Sylhet Hub"></div>
-              <div class="hub-pulse hub-rajshahi" title="Rajshahi Hub"></div>
-              <div class="hub-pulse hub-barisal" title="Barisal Hub"></div>
-              <div class="hub-pulse hub-mymensingh" title="Mymensingh Hub"></div>
-              <div class="hub-pulse hub-chittagong" title="Chittagong Hub"></div>
-              <div class="hub-pulse hub-khulna" title="Khulna Hub"></div>
+          <div class="map-visual-wrapper reveal">
+            <img
+              class="bd-map-img"
+              src="images/bangladesh-network.svg"
+              alt="Map of Bangladesh showing Genesis engineering hubs"
+              width="1000"
+              height="1000"
+              loading="lazy"
+              decoding="async"
+            >
+            <div class="map-dots-network" role="list" aria-label="Engineering hub cities">
+              <button type="button" class="hub-pulse primary-hub hub-dhaka" role="listitem" title="Dhaka Central Hub" aria-label="Dhaka Central Hub">
+                <span class="hub-label">Dhaka</span>
+              </button>
+              <button type="button" class="hub-pulse hub-sylhet" role="listitem" title="Sylhet Hub" aria-label="Sylhet Hub">
+                <span class="hub-label">Sylhet</span>
+              </button>
+              <button type="button" class="hub-pulse hub-rajshahi" role="listitem" title="Rajshahi Hub" aria-label="Rajshahi Hub">
+                <span class="hub-label">Rajshahi</span>
+              </button>
+              <button type="button" class="hub-pulse hub-mymensingh" role="listitem" title="Mymensingh Hub" aria-label="Mymensingh Hub">
+                <span class="hub-label">Mymensingh</span>
+              </button>
+              <button type="button" class="hub-pulse hub-khulna" role="listitem" title="Khulna Hub" aria-label="Khulna Hub">
+                <span class="hub-label">Khulna</span>
+              </button>
+              <button type="button" class="hub-pulse hub-barisal" role="listitem" title="Barisal Hub" aria-label="Barisal Hub">
+                <span class="hub-label">Barisal</span>
+              </button>
+              <button type="button" class="hub-pulse hub-chittagong" role="listitem" title="Chittagong Hub" aria-label="Chittagong Hub">
+                <span class="hub-label">Chittagong</span>
+              </button>
             </div>
           </div>
 
-          <!-- Description Column -->
           <div class="support-details">
-            <span class="section-tag">Technical Operations</span>
-            <h3>Nationwide Engineering Network</h3>
-            <p style="color: var(--gray-600);">
-              Our engineering infrastructure comprises over <strong>60+ certified field service engineers</strong> strategically located across Bangladesh. We provide local technical support, regional spare parts hubs, and rapid diagnostics resolution.
+            <span class="section-tag reveal">Technical Operations</span>
+            <h2 class="reveal mb-4">Nationwide engineering network</h2>
+            <p class="reveal mb-2 text-[var(--muted)]">
+              Over <strong class="text-ink">60+ certified field service engineers</strong> strategically located across Bangladesh — with local technical support, regional spare parts hubs, and rapid diagnostics resolution.
             </p>
 
             <div class="support-policies-grid">
-              
-              <div class="policy-item">
-                <div class="policy-icon-wrapper">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                </div>
+              <div class="policy-item reveal">
+                <div class="policy-icon-wrapper"><i data-lucide="phone" style="width:18px;height:18px;stroke-width:1.5"></i></div>
                 <div class="policy-text">
                   <h4>24/7 Helpline</h4>
                   <p>Round-the-clock telephone and remote diagnostic assistance.</p>
                 </div>
               </div>
-
-              <div class="policy-item">
-                <div class="policy-icon-wrapper">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                </div>
+              <div class="policy-item reveal">
+                <div class="policy-icon-wrapper"><i data-lucide="clock" style="width:18px;height:18px;stroke-width:1.5"></i></div>
                 <div class="policy-text">
                   <h4>&lt;24h Response</h4>
                   <p>Guaranteed on-site engineer visit within 24 hours in any district.</p>
                 </div>
               </div>
-
-              <div class="policy-item">
-                <div class="policy-icon-wrapper">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-                </div>
+              <div class="policy-item reveal">
+                <div class="policy-icon-wrapper"><i data-lucide="clipboard-check" style="width:18px;height:18px;stroke-width:1.5"></i></div>
                 <div class="policy-text">
                   <h4>Preventive Audits</h4>
                   <p>Scheduled inspections and calibrations to prevent critical breakdowns.</p>
                 </div>
               </div>
-
-              <div class="policy-item">
-                <div class="policy-icon-wrapper">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                </div>
+              <div class="policy-item reveal">
+                <div class="policy-icon-wrapper"><i data-lucide="box" style="width:18px;height:18px;stroke-width:1.5"></i></div>
                 <div class="policy-text">
                   <h4>Genuine Spares</h4>
                   <p>Direct manufacturer components available in local stockrooms.</p>
                 </div>
               </div>
-
             </div>
           </div>
-
         </div>
+      </div>
+    </section>
 
+    <!-- Final CTA -->
+    <section class="cta-sky">
+      <div class="bubble bubble-2" style="top:15%;left:10%;opacity:0.5"></div>
+      <div class="bubble bubble-4" style="top:20%;right:12%;opacity:0.45"></div>
+      <h2 class="reveal">Join hundreds of hospitals that trust Genesis</h2>
+      <p class="reveal">Tell us what your facility needs — diagnostics, imaging, dialysis, or life support — and our procurement team will prepare a clear quotation.</p>
+      <div class="reveal">
+        <a href="contact.html" class="btn btn-primary uk-btn uk-btn-primary">
+          Request a Quote
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer>
+  <footer class="site-footer">
     <div class="container footer-grid">
-      
-      <!-- Brand column -->
       <div class="footer-col footer-brand">
         <a href="index.html" class="logo-wrapper" style="width: 190px; height: 44px; display: block;">
-          <svg viewBox="0 0 420 100" width="100%" height="100%">
-            <path d="M 60 88 C 60 88 18 57 18 35 C 18 19 30 10 43 10 C 52 10 60 17 60 17 C 60 17 68 10 77 10 C 90 10 102 19 102 35 C 102 57 60 88 60 88 Z" fill="#008cd6" />
-            <path d="M 8 60 L 35 60" stroke="#e92330" stroke-width="5" stroke-linecap="round" fill="none" />
-            <path d="M 85 60 L 112 60" stroke="#e92330" stroke-width="5" stroke-linecap="round" fill="none" />
-            <path d="M 35 60 L 40 60 L 46 72 L 53 22 L 60 92 L 67 42 L 73 70 L 78 60 L 85 60" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" fill="none" />
-            <text x="125" y="48" font-family="Outfit" font-size="34" font-weight="900" fill="#008cd6" letter-spacing="1">GENESIS</text>
-            <text x="128" y="78" font-family="Outfit" font-size="22" font-weight="500" fill="#a0aec0" letter-spacing="8.5">TRADING</text>
-          </svg>
+          <img src="images/logo.svg" alt="Genesis Trading Logo">
         </a>
-        <p>
-          Supplier of world-class medical equipment and consumables. "A Newer Approach to Health Technology" in Bangladesh.
-        </p>
-        <span style="font-size: 0.85rem; color: var(--gray-400);">Established in 2015</span>
+        <p>Supplier of world-class medical equipment and consumables. A newer approach to health technology in Bangladesh.</p>
+        <span style="font-size: 0.85rem; color: var(--muted-light);">Established in 2015</span>
       </div>
 
-      <!-- Quick links -->
       <div class="footer-col">
         <h3>Site Links</h3>
         <ul>
@@ -284,58 +357,48 @@
         </ul>
       </div>
 
-      <!-- Categories -->
       <div class="footer-col">
         <h3>Categories</h3>
         <ul>
           <li><a href="products.html?cat=ivd" class="footer-link">In Vitro Diagnostic</a></li>
-          <li><a href="products.html?cat=imaging" class="footer-link">Radiology & Imaging</a></li>
+          <li><a href="products.html?cat=imaging" class="footer-link">Radiology &amp; Imaging</a></li>
           <li><a href="products.html?cat=hemodialysis" class="footer-link">Hemodialysis</a></li>
           <li><a href="products.html?cat=lifesupport" class="footer-link">Patient Life Support</a></li>
         </ul>
       </div>
 
-      <!-- Contacts -->
       <div class="footer-col">
         <h3>Headquarters</h3>
         <div class="footer-contact">
           <div class="contact-item">
-            <span class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            </span>
+            <span class="contact-icon"><i data-lucide="map-pin" style="width:16px;height:16px;stroke-width:1.5"></i></span>
             <span>Ivory Krishnochura, 3/1-E (7th floor), Purana Paltan, Dhaka-1000, Bangladesh</span>
           </div>
-          
           <div class="contact-item">
-            <span class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            </span>
+            <span class="contact-icon"><i data-lucide="mail" style="width:16px;height:16px;stroke-width:1.5"></i></span>
             <a href="mailto:admin@genesistrading.biz" style="word-break: break-all;">admin@genesistrading.biz</a>
           </div>
-
           <div class="contact-item">
-            <span class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            </span>
+            <span class="contact-icon"><i data-lucide="phone" style="width:16px;height:16px;stroke-width:1.5"></i></span>
             <a href="tel:+8802247121519">+88 02 247121519</a>
           </div>
         </div>
       </div>
-
     </div>
 
-    <!-- Copyright -->
     <div class="container footer-bottom">
-      <div class="footer-copyright">
-        &copy; 2026 Genesis Trading Co. All rights reserved.
-      </div>
-      <div class="footer-copyright" style="display: flex; gap: 20px;">
+      <div>&copy; 2026 Genesis Trading Co. All rights reserved.</div>
+      <div>
         <a href="http://www.genesistradingco.com" target="_blank" rel="noopener">www.genesistradingco.com</a>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/franken-ui@1.1.0/dist/js/core.iife.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/experience.js"></script>
 </body>

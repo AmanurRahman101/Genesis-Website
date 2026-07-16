@@ -5,166 +5,158 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Genesis Trading Co.</title>
   <meta name="description" content="Contact Genesis Trading Co. headquarters in Dhaka. Get in touch with our medical equipment procurement and service engineering teams. Submit your RFQ.">
-  
+
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@1.1.0/dist/css/core.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Instrument Serif', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+          },
+          colors: { ink: '#0f172a', brand: '#008cd6' },
+        },
+      },
+      corePlugins: { preflight: false },
+    };
+  </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="font-sans antialiased">
 
-  <!-- Sticky Header -->
-  <header>
-    <div class="container nav-container">
-      <a href="index.html" class="logo-wrapper">
-        <img src="images/logo.svg" alt="Genesis Trading Logo">
-      </a>
-      
-      <nav aria-label="Main Navigation">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="products.html" class="nav-link">Products</a></li>
-          <li><a href="experience.html" class="nav-link">Experience</a></li>
-          <li><a href="contact.html" class="nav-link active">Contact</a></li>
-        </ul>
-      </nav>
-      
-      <button class="menu-toggle" aria-label="Toggle navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-shell">
+        <a href="index.html" class="logo-wrapper" aria-label="Genesis Trading Co. home">
+          <img src="images/logo.svg" alt="Genesis Trading Logo">
+        </a>
+        <nav aria-label="Main Navigation">
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="products.html" class="nav-link">Products</a></li>
+            <li><a href="experience.html" class="nav-link">Experience</a></li>
+            <li><a href="contact.html" class="nav-link active">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="contact.html" class="btn btn-primary nav-cta uk-btn uk-btn-primary">Get Started</a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" type="button">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Page Hero -->
   <main>
-    <section class="hero-section" style="min-height: auto; padding: 140px 0 60px 0;">
-      <div class="container text-center">
-        <span class="section-tag" style="color: var(--accent);">Corporate Communications</span>
-        <h1 style="font-size: 3rem; margin-bottom: 16px;">Contact Our Procurement Team</h1>
-        <p class="text-gray" style="max-width: 720px; margin: 0 auto;">
-          Whether you are managing a public medical college hospital tender or looking to upgrade a private clinical laboratory, we are here to assist.
+    <section class="page-hero">
+      <div class="hero-bubbles" aria-hidden="true">
+        <div class="bubble bubble-2 bubble-float"></div>
+        <div class="bubble bubble-4 bubble-float bubble-float-delay"></div>
+      </div>
+      <div class="container relative z-10">
+        <span class="section-tag reveal">Corporate Communications</span>
+        <h1 class="reveal">Contact our procurement team</h1>
+        <p class="reveal">
+          Whether you are managing a public medical college hospital tender or upgrading a private clinical laboratory, we are here to assist.
         </p>
       </div>
     </section>
 
-    <!-- Contact Info & Form -->
     <section class="section-padding bg-slate-section" id="contact-details-form">
       <div class="container contact-layout-grid">
-        
-        <!-- Info Cards Side -->
         <div class="contact-info-cards">
-          
-          <div class="contact-card-item card-panel">
-            <div class="contact-card-icon" style="color: var(--primary);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            </div>
+          <div class="contact-card-item reveal">
+            <div class="contact-card-icon"><i data-lucide="map-pin" style="width:22px;height:22px;stroke-width:1.5"></i></div>
             <div class="contact-card-text">
               <h4>Head Office Address</h4>
               <p>Ivory Krishnochura, 3/1-E (7th floor), Purana Paltan, Dhaka-1000, Bangladesh</p>
             </div>
           </div>
 
-          <div class="contact-card-item card-panel">
-            <div class="contact-card-icon" style="color: var(--accent);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            </div>
+          <div class="contact-card-item reveal">
+            <div class="contact-card-icon"><i data-lucide="mail" style="width:22px;height:22px;stroke-width:1.5"></i></div>
             <div class="contact-card-text">
               <h4>Official Email</h4>
               <a href="mailto:admin@genesistrading.biz">admin@genesistrading.biz</a>
             </div>
           </div>
 
-          <div class="contact-card-item card-panel">
-            <div class="contact-card-icon" style="color: var(--success);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            </div>
+          <div class="contact-card-item reveal">
+            <div class="contact-card-icon"><i data-lucide="phone" style="width:22px;height:22px;stroke-width:1.5"></i></div>
             <div class="contact-card-text">
               <h4>Corporate Telephone</h4>
               <a href="tel:+8802247121519">+88 02 247121519</a>
             </div>
           </div>
 
-          <!-- Technical support card -->
-          <div class="card-panel" style="padding: 24px;">
-            <h4 style="font-family:'Outfit'; margin-bottom:10px;">Engineering Support Helpline</h4>
-            <p style="font-size:0.85rem; color:var(--gray-600); margin-bottom:16px;">
+          <div class="card-panel reveal" style="padding: 1.5rem;">
+            <h4 class="font-sans text-base font-bold tracking-normal text-ink mb-2">Engineering Support Helpline</h4>
+            <p class="text-sm mb-4">
               For hospital equipment emergency repair, calibration requests, or reagent refills:
             </p>
-            <div style="font-size:0.9rem; font-weight:700; color:var(--accent);">
+            <div class="text-sm font-bold text-[var(--accent)]">
               Hotline: +88 02 247121519 ext. 9
             </div>
-            <span style="font-size:0.75rem; color:var(--gray-400);">Guaranteed on-site response &lt;24 hours.</span>
+            <span class="text-xs text-[var(--muted-light)]">Guaranteed on-site response &lt;24 hours.</span>
           </div>
-
         </div>
 
-        <!-- Form Side -->
-        <div class="form-panel">
-          <h3 style="font-family:'Outfit'; font-size:1.5rem; margin-bottom:8px;">Request Product Quotation (RFQ)</h3>
-          <p class="text-gray" style="font-size:0.88rem; margin-bottom:24px;">
+        <div class="form-panel reveal uk-card">
+          <h3 class="font-sans text-2xl font-bold tracking-normal text-ink mb-2">Request Product Quotation (RFQ)</h3>
+          <p class="text-sm mb-6">
             Provide your technical requirements, estimated quantities, and installation details. Our team will prepare a formal RFP response.
           </p>
 
           <form id="enquiry-form">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="form-group">
                 <label class="form-label" for="enquiry-name">Full Name *</label>
-                <input type="text" id="enquiry-name" class="form-input" required>
+                <input type="text" id="enquiry-name" class="form-input uk-input" required>
               </div>
               <div class="form-group">
                 <label class="form-label" for="enquiry-email">Email Address *</label>
-                <input type="email" id="enquiry-email" class="form-input" required>
+                <input type="email" id="enquiry-email" class="form-input uk-input" required>
               </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="form-group">
                 <label class="form-label" for="enquiry-phone">Phone Number</label>
-                <input type="tel" id="enquiry-phone" class="form-input" placeholder="+88 01">
+                <input type="tel" id="enquiry-phone" class="form-input uk-input" placeholder="+88 01">
               </div>
               <div class="form-group">
                 <label class="form-label" for="enquiry-subject">Product or Topic of Interest</label>
-                <input type="text" id="enquiry-subject" class="form-input" value="Medical Equipment Quotation">
+                <input type="text" id="enquiry-subject" class="form-input uk-input" value="Medical Equipment Quotation">
               </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="enquiry-details">Clinical/Tender Specifications & Site Location *</label>
-              <textarea id="enquiry-details" class="form-input" placeholder="Please list the equipment models (e.g. U200 CLIA, Resona R9) and the specific hospital location..." required></textarea>
+              <label class="form-label" for="enquiry-details">Clinical/Tender Specifications &amp; Site Location *</label>
+              <textarea id="enquiry-details" class="form-input uk-textarea" placeholder="Please list the equipment models (e.g. U200 CLIA, Resona R9) and the specific hospital location..." required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Submit RFQ Request</button>
+            <button type="submit" class="btn btn-primary uk-btn uk-btn-primary" style="width: 100%; margin-top: 0.5rem;">Submit RFQ Request</button>
           </form>
         </div>
-
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
+  <footer class="site-footer">
     <div class="container footer-grid">
-      
-      <!-- Brand column -->
       <div class="footer-col footer-brand">
         <a href="index.html" class="logo-wrapper" style="width: 190px; height: 44px; display: block;">
-          <svg viewBox="0 0 420 100" width="100%" height="100%">
-            <path d="M 60 88 C 60 88 18 57 18 35 C 18 19 30 10 43 10 C 52 10 60 17 60 17 C 60 17 68 10 77 10 C 90 10 102 19 102 35 C 102 57 60 88 60 88 Z" fill="#008cd6" />
-            <path d="M 8 60 L 35 60" stroke="#e92330" stroke-width="5" stroke-linecap="round" fill="none" />
-            <path d="M 85 60 L 112 60" stroke="#e92330" stroke-width="5" stroke-linecap="round" fill="none" />
-            <path d="M 35 60 L 40 60 L 46 72 L 53 22 L 60 92 L 67 42 L 73 70 L 78 60 L 85 60" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" fill="none" />
-            <text x="125" y="48" font-family="Outfit" font-size="34" font-weight="900" fill="#008cd6" letter-spacing="1">GENESIS</text>
-            <text x="128" y="78" font-family="Outfit" font-size="22" font-weight="500" fill="#a0aec0" letter-spacing="8.5">TRADING</text>
-          </svg>
+          <img src="images/logo.svg" alt="Genesis Trading Logo">
         </a>
-        <p>
-          Supplier of world-class medical equipment and consumables. "A Newer Approach to Health Technology" in Bangladesh.
-        </p>
-        <span style="font-size: 0.85rem; color: var(--gray-400);">Established in 2015</span>
+        <p>Supplier of world-class medical equipment and consumables. A newer approach to health technology in Bangladesh.</p>
+        <span style="font-size: 0.85rem; color: var(--muted-light);">Established in 2015</span>
       </div>
-
-      <!-- Quick links -->
       <div class="footer-col">
         <h3>Site Links</h3>
         <ul>
@@ -175,59 +167,43 @@
           <li><a href="contact.html" class="footer-link">Contact</a></li>
         </ul>
       </div>
-
-      <!-- Categories -->
       <div class="footer-col">
         <h3>Categories</h3>
         <ul>
           <li><a href="products.html?cat=ivd" class="footer-link">In Vitro Diagnostic</a></li>
-          <li><a href="products.html?cat=imaging" class="footer-link">Radiology & Imaging</a></li>
+          <li><a href="products.html?cat=imaging" class="footer-link">Radiology &amp; Imaging</a></li>
           <li><a href="products.html?cat=hemodialysis" class="footer-link">Hemodialysis</a></li>
           <li><a href="products.html?cat=lifesupport" class="footer-link">Patient Life Support</a></li>
         </ul>
       </div>
-
-      <!-- Contacts -->
       <div class="footer-col">
         <h3>Headquarters</h3>
         <div class="footer-contact">
           <div class="contact-item">
-            <span class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            </span>
+            <span class="contact-icon"><i data-lucide="map-pin" style="width:16px;height:16px;stroke-width:1.5"></i></span>
             <span>Ivory Krishnochura, 3/1-E (7th floor), Purana Paltan, Dhaka-1000, Bangladesh</span>
           </div>
-          
           <div class="contact-item">
-            <span class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            </span>
-            <a href="mailto:admin@genesistrading.biz" style="word-break: break-all;">admin@genesistrading.biz</a>
+            <span class="contact-icon"><i data-lucide="mail" style="width:16px;height:16px;stroke-width:1.5"></i></span>
+            <a href="mailto:admin@genesistrading.biz">admin@genesistrading.biz</a>
           </div>
-
           <div class="contact-item">
-            <span class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            </span>
+            <span class="contact-icon"><i data-lucide="phone" style="width:16px;height:16px;stroke-width:1.5"></i></span>
             <a href="tel:+8802247121519">+88 02 247121519</a>
           </div>
         </div>
       </div>
-
     </div>
-
-    <!-- Copyright -->
     <div class="container footer-bottom">
-      <div class="footer-copyright">
-        &copy; 2026 Genesis Trading Co. All rights reserved.
-      </div>
-      <div class="footer-copyright" style="display: flex; gap: 20px;">
-        <a href="http://www.genesistradingco.com" target="_blank" rel="noopener">www.genesistradingco.com</a>
-      </div>
+      <div>&copy; 2026 Genesis Trading Co. All rights reserved.</div>
+      <div><a href="http://www.genesistradingco.com" target="_blank" rel="noopener">www.genesistradingco.com</a></div>
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/franken-ui@1.1.0/dist/js/core.iife.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
