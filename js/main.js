@@ -8,6 +8,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   setupHeader();
   setupMobileMenu();
+  setupAboutDropdown();
+  ensureCatalogFooter();
   setupPartnerSlider();
   setupContactFormHandler();
   setupLucideIcons();
@@ -34,16 +36,23 @@ function setupHeader() {
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  const path = window.location.pathname;
-  const page = path.split('/').pop() || 'index.html';
+  const page = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach((link) => {
     const href = link.getAttribute('href');
+    if (!href || href.startsWith('#')) return;
     const isActive =
-      href === page ||
+      href.split('#')[0] === page ||
       (page === '' && href === 'index.html') ||
       (page === 'index.html' && href === './');
     link.classList.toggle('active', Boolean(isActive));
   });
+
+  if (window.location.hash) {
+    requestAnimationFrame(() => {
+      const target = document.querySelector(window.location.hash);
+      if (target) target.scrollIntoView({ behavior: 'auto', block: 'start' });
+    });
+  }
 }
 
 function setupMobileMenu() {
@@ -51,10 +60,21 @@ function setupMobileMenu() {
   const navMenu = document.querySelector('.nav-menu');
   if (!toggleBtn || !navMenu) return;
 
+  const closeMenu = () => {
+    toggleBtn.classList.remove('active');
+    navMenu.classList.remove('active');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+  };
+
+  toggleBtn.setAttribute('aria-expanded', 'false');
   toggleBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-    toggleBtn.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    const open = !navMenu.classList.contains('active');
+    toggleBtn.classList.toggle('active', open);
+    navMenu.classList.toggle('active', open);
+    toggleBtn.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('menu-open', open);
   });
 
   document.addEventListener('click', (e) => {
@@ -63,17 +83,125 @@ function setupMobileMenu() {
       !navMenu.contains(e.target) &&
       !toggleBtn.contains(e.target)
     ) {
-      toggleBtn.classList.remove('active');
-      navMenu.classList.remove('active');
+      closeMenu();
     }
   });
 
-  document.querySelectorAll('.nav-link').forEach((link) => {
-    link.addEventListener('click', () => {
-      toggleBtn.classList.remove('active');
-      navMenu.classList.remove('active');
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  navMenu.querySelectorAll('a').forEach((link) => {
+    if (link.matches('.has-dropdown > .nav-link-wrap > .nav-link')) return;
+    link.addEventListener('click', closeMenu);
+  });
+}
+
+function isDesktopNav() {
+  return window.matchMedia('(min-width: 1101px)').matches;
+}
+
+function setupAboutDropdown() {
+  const items = document.querySelectorAll('.has-dropdown');
+  if (!items.length) return;
+
+  const closeAll = () => {
+    items.forEach((item) => {
+      item.classList.remove('is-open');
+      const caret = item.querySelector('.nav-caret-btn');
+      if (caret) caret.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  const scrollToHash = (hash) => {
+    const target = hash ? document.querySelector(hash) : null;
+    if (!target) return false;
+    const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    target.scrollIntoView({ behavior, block: 'start' });
+    return true;
+  };
+
+  items.forEach((item) => {
+    const caret = item.querySelector('.nav-caret-btn');
+    const dropdown = item.querySelector('.nav-dropdown');
+    if (!caret || !dropdown) return;
+
+    const setOpen = (open) => {
+      item.classList.toggle('is-open', open);
+      caret.setAttribute('aria-expanded', String(open));
+    };
+
+    caret.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      setOpen(!item.classList.contains('is-open'));
+    });
+
+    const aboutLink = item.querySelector('.nav-link-wrap > .nav-link');
+    if (aboutLink) {
+      aboutLink.addEventListener('click', (event) => {
+        if (!isDesktopNav()) {
+          event.preventDefault();
+          event.stopPropagation();
+          setOpen(!item.classList.contains('is-open'));
+        }
+      });
+    }
+
+    item.addEventListener('mouseenter', () => {
+      if (isDesktopNav()) setOpen(true);
+    });
+    item.addEventListener('mouseleave', () => {
+      if (isDesktopNav()) setOpen(false);
+    });
+
+    dropdown.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const hash = link.hash;
+        const targetPage = (link.pathname.split('/').pop() || 'about.html');
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const samePage = targetPage === currentPage || (currentPage === '' && targetPage === 'index.html');
+
+        if (hash && samePage && scrollToHash(hash)) {
+          event.preventDefault();
+          history.pushState(null, '', hash);
+        }
+
+        setOpen(false);
+      });
     });
   });
+
+  document.addEventListener('click', (event) => {
+    if (![...items].some((item) => item.contains(event.target))) closeAll();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeAll();
+  });
+
+  if (window.location.hash) {
+    requestAnimationFrame(() => scrollToHash(window.location.hash));
+  }
+}
+
+function ensureCatalogFooter() {
+  if (!document.body.classList.contains('catalog-page-body') || document.querySelector('.site-footer')) return;
+  document.querySelectorAll('.products-panel > div').forEach((element) => {
+    if (element.textContent.includes('Genesis Trading Co. All rights reserved.')) element.remove();
+  });
+  const footer = document.createElement('footer');
+  footer.className = 'site-footer catalog-footer';
+  footer.innerHTML = `
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand"><a href="index.html" class="logo-wrapper footer-logo"><img src="images/logo.svg" alt="Genesis Trading Logo"></a><p>Medical equipment, diagnostics, and lifecycle support across Bangladesh.</p></div>
+      <div class="footer-col"><h3>Explore</h3><ul><li><a href="index.html" class="footer-link">Home</a></li><li><a href="about.html" class="footer-link">About</a></li><li><a href="experience.html" class="footer-link">Experience</a></li><li><a href="contact.html" class="footer-link">Contact</a></li></ul></div>
+      <div class="footer-col"><h3>Categories</h3><ul><li><a href="products.html?cat=ivd" class="footer-link">Diagnostics</a></li><li><a href="products.html?cat=imaging" class="footer-link">Imaging</a></li><li><a href="products.html?cat=hemodialysis" class="footer-link">Hemodialysis</a></li><li><a href="products.html?cat=lifesupport" class="footer-link">Life support</a></li></ul></div>
+      <div class="footer-col"><h3>Headquarters</h3><div class="footer-contact"><div class="contact-item">Dhaka, Bangladesh</div><div class="contact-item"><a href="mailto:admin@genesistrading.biz">admin@genesistrading.biz</a></div><div class="contact-item"><a href="tel:+8802247121519">+88 02 247121519</a></div></div></div>
+    </div>
+    <div class="container footer-bottom"><div>&copy; 2026 Genesis Trading Co. All rights reserved.</div><div>www.genesistradingco.com</div></div>
+  `;
+  document.body.appendChild(footer);
 }
 
 function setupPartnerSlider() {

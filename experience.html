@@ -39,13 +39,26 @@
         <nav aria-label="Main Navigation">
           <ul class="nav-menu">
             <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
+            <li class="has-dropdown">
+              <div class="nav-link-wrap">
+                <a href="about.html" class="nav-link">About</a>
+                <button class="nav-caret-btn" type="button" aria-label="About sections" aria-expanded="false" aria-haspopup="true">
+                  <svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+              <ul class="nav-dropdown" aria-label="About sections">
+                <li><a href="about.html#company-profile">Company Profile</a></li>
+                <li><a href="about.html#philosophy">Mission &amp; Values</a></li>
+                <li><a href="about.html#workforce-details">Our People</a></li>
+              </ul>
+            </li>
             <li><a href="products.html" class="nav-link">Products</a></li>
             <li><a href="experience.html" class="nav-link active">Experience</a></li>
             <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-mobile-cta"><a href="contact.html#contact-details-form" class="btn btn-primary">Get Started</a></li>
           </ul>
         </nav>
-        <a href="contact.html" class="btn btn-primary nav-cta uk-btn uk-btn-primary">Get Started</a>
+        <a href="contact.html#contact-details-form" class="btn btn-primary nav-cta uk-btn uk-btn-primary">Get Started</a>
         <button class="menu-toggle" aria-label="Toggle navigation menu" type="button">
           <span></span><span></span><span></span>
         </button>
@@ -55,56 +68,42 @@
 
   <main>
     <section class="page-hero">
-      <div class="hero-bubbles" aria-hidden="true">
-        <div class="bubble bubble-1 bubble-float"></div>
-        <div class="bubble bubble-3 bubble-float bubble-float-delay-2"></div>
-      </div>
-      <div class="container relative z-10">
+      <div class="container">
         <span class="section-tag reveal">Enterprise Track Record</span>
         <h1 class="reveal">National experience &amp; work orders</h1>
         <p class="reveal">
-          Genesis Trading Co. is a trusted procurement contractor for major public health projects and medical college construction in Bangladesh.
+          Trusted procurement partner for public health projects and medical college construction across Bangladesh.
         </p>
       </div>
     </section>
 
-    <section class="metrics-section" style="padding: 0 0 2rem;">
-      <div class="container">
-        <div class="metrics-dashboard-grid">
-          <div class="metric-dashboard-card reveal">
-            <div class="metric-dashboard-value">
-              ~<span class="animate-number" data-target="125" data-speed="1800">0</span>+
-            </div>
-            <div class="metric-dashboard-label">Government Hospitals &amp; Institutions</div>
-          </div>
-          <div class="metric-dashboard-card success reveal">
-            <div class="metric-dashboard-value">
-              ~<span class="animate-number" data-target="440" data-speed="2000">0</span>+
-            </div>
-            <div class="metric-dashboard-label">Upazila Health Complexes Served</div>
-          </div>
-          <div class="metric-dashboard-card accent reveal">
-            <div class="metric-dashboard-value">
-              ~<span class="animate-number" data-target="75" data-speed="1500">0</span>+
-            </div>
-            <div class="metric-dashboard-label">Private Hospitals &amp; Diagnostics</div>
-          </div>
-          <div class="metric-dashboard-card reveal">
-            <div class="metric-dashboard-value">
-              ~<span class="animate-number" data-target="50" data-speed="1200">0</span>+
-            </div>
-            <div class="metric-dashboard-label">Sub-Distribution Networks</div>
-          </div>
+    <section class="stats-band" id="metrics">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-number">~<span class="animate-number" data-target="125" data-speed="1800">0</span>+</div>
+          <div class="stat-label">Government Hospitals</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number">~<span class="animate-number" data-target="440" data-speed="2000">0</span>+</div>
+          <div class="stat-label">Upazila Health Complexes</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number">~<span class="animate-number" data-target="75" data-speed="1500">0</span>+</div>
+          <div class="stat-label">Private Hospitals</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number">~<span class="animate-number" data-target="50" data-speed="1200">0</span>+</div>
+          <div class="stat-label">Distribution Networks</div>
         </div>
       </div>
     </section>
 
-    <section class="section-padding work-orders-section bg-slate-section">
+    <section class="section-padding work-orders-section bg-slate-section" id="work-orders">
       <div class="container">
         <div class="section-title-wrapper reveal" style="margin-bottom: 2.5rem;">
           <span class="section-tag">Reference Projects</span>
           <h2 class="section-title">Major government contracts</h2>
-          <p class="section-subtitle">A search index of our high-value public procurement packages, including diagnostics pipelines, imaging scanners, and sterile services supply.</p>
+          <p class="section-subtitle">High-value public procurement packages across diagnostics, imaging, and sterile services.</p>
         </div>
 
         <div class="search-wrapper reveal" style="max-width: 600px; margin: 0 auto 3rem auto;">
@@ -120,11 +119,11 @@
       </div>
     </section>
 
-    <section class="section-padding clients-section">
+    <section class="section-padding clients-section" id="clients">
       <div class="container">
         <div class="clients-grid">
           <div class="client-list-card reveal">
-            <h3 class="text-primary">Prominent Private Customers</h3>
+            <h3>Prominent Private Customers</h3>
             <ol class="client-ol">
               <li class="client-li"><div class="client-num">1</div><div class="client-name">Anwar Khan Modern Medical College</div></li>
               <li class="client-li"><div class="client-num">2</div><div class="client-name">Ever Care Hospital, Sherpur, Mymensingh</div></li>
@@ -134,7 +133,7 @@
             </ol>
           </div>
           <div class="client-list-card reveal">
-            <h3 class="text-accent">Private Health Systems</h3>
+            <h3>Private Health Systems</h3>
             <ol class="client-ol">
               <li class="client-li"><div class="client-num">6</div><div class="client-name">Imperial Private Health Care BD Ltd</div></li>
               <li class="client-li"><div class="client-num">7</div><div class="client-name">Prime Medical College</div></li>
@@ -146,24 +145,32 @@
         </div>
       </div>
     </section>
+
+    <section class="cta-sky">
+      <h2 class="reveal">Ready to equip your facility?</h2>
+      <p class="reveal">Talk to our procurement team about diagnostics, imaging, dialysis, or life-support systems.</p>
+      <div class="reveal">
+        <a href="contact.html#contact-details-form" class="btn btn-primary uk-btn uk-btn-primary">Request a Quote</a>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-col footer-brand">
-        <a href="index.html" class="logo-wrapper" style="width: 190px; height: 44px; display: block;">
+        <a href="index.html" class="logo-wrapper footer-logo" aria-label="Genesis Trading Co. home">
           <img src="images/logo.svg" alt="Genesis Trading Logo">
         </a>
         <p>Supplier of world-class medical equipment and consumables. A newer approach to health technology in Bangladesh.</p>
-        <span style="font-size: 0.85rem; color: var(--muted-light);">Established in 2015</span>
+        <span class="footer-established">Established in 2015</span>
       </div>
       <div class="footer-col">
-        <h3>Site Links</h3>
+        <h3>Explore</h3>
         <ul>
           <li><a href="index.html" class="footer-link">Home</a></li>
           <li><a href="about.html" class="footer-link">About</a></li>
-          <li><a href="products.html" class="footer-link">Product Catalog</a></li>
-          <li><a href="experience.html" class="footer-link">Work Orders</a></li>
+          <li><a href="products.html" class="footer-link">Products</a></li>
+          <li><a href="experience.html" class="footer-link">Experience</a></li>
           <li><a href="contact.html" class="footer-link">Contact</a></li>
         </ul>
       </div>
@@ -173,7 +180,7 @@
           <li><a href="products.html?cat=ivd" class="footer-link">In Vitro Diagnostic</a></li>
           <li><a href="products.html?cat=imaging" class="footer-link">Radiology &amp; Imaging</a></li>
           <li><a href="products.html?cat=hemodialysis" class="footer-link">Hemodialysis</a></li>
-          <li><a href="products.html?cat=lifesupport" class="footer-link">Patient Life Support</a></li>
+          <li><a href="products.html?cat=lifesupport" class="footer-link">Life Support</a></li>
         </ul>
       </div>
       <div class="footer-col">

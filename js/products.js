@@ -628,7 +628,38 @@ window.closeModal = closeModal;
 document.addEventListener('DOMContentLoaded', () => {
   const catalogGrid = document.getElementById('products-grid-container');
   if (catalogGrid) {
+    const requestedCategory = new URLSearchParams(window.location.search).get('cat');
+    const validCategories = ['ivd', 'imaging', 'hemodialysis', 'lifesupport'];
+    if (validCategories.includes(requestedCategory)) {
+      activeCategory = requestedCategory;
+      const categoryButton = document.querySelector(`[data-filter-cat="${requestedCategory}"]`);
+      document.querySelectorAll('[data-filter-cat]').forEach((button) => button.classList.remove('active'));
+      if (categoryButton) categoryButton.classList.add('active');
+    }
     renderCatalog(productsData);
     setupFilterListeners();
+    applyFilters();
+    updateFilterCounts();
   }
 });
+
+function updateFilterCounts() {
+  const totals = productsData.reduce((acc, product) => {
+    acc.all += 1;
+    acc[product.category] = (acc[product.category] || 0) + 1;
+    return acc;
+  }, { all: 0 });
+
+  const map = {
+    all: 'count-all',
+    ivd: 'count-ivd',
+    imaging: 'count-imaging',
+    hemodialysis: 'count-hemo',
+    lifesupport: 'count-lifesupport',
+  };
+
+  Object.entries(map).forEach(([key, id]) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = totals[key] || 0;
+  });
+}

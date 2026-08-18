@@ -39,13 +39,26 @@
         <nav aria-label="Main Navigation">
           <ul class="nav-menu">
             <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link active">About</a></li>
+            <li class="has-dropdown">
+              <div class="nav-link-wrap">
+                <a href="about.html" class="nav-link active">About</a>
+                <button class="nav-caret-btn" type="button" aria-label="About sections" aria-expanded="false" aria-haspopup="true">
+                  <svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+              <ul class="nav-dropdown" aria-label="About sections">
+                <li><a href="about.html#company-profile">Company Profile</a></li>
+                <li><a href="about.html#philosophy">Mission &amp; Values</a></li>
+                <li><a href="about.html#workforce-details">Our People</a></li>
+              </ul>
+            </li>
             <li><a href="products.html" class="nav-link">Products</a></li>
             <li><a href="experience.html" class="nav-link">Experience</a></li>
             <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-mobile-cta"><a href="contact.html#contact-details-form" class="btn btn-primary">Get Started</a></li>
           </ul>
         </nav>
-        <a href="contact.html" class="btn btn-primary nav-cta uk-btn uk-btn-primary">Get Started</a>
+        <a href="contact.html#contact-details-form" class="btn btn-primary nav-cta uk-btn uk-btn-primary">Get Started</a>
         <button class="menu-toggle" aria-label="Toggle navigation menu" type="button">
           <span></span><span></span><span></span>
         </button>
@@ -55,11 +68,7 @@
 
   <main>
     <section class="page-hero">
-      <div class="hero-bubbles" aria-hidden="true">
-        <div class="bubble bubble-1 bubble-float"></div>
-        <div class="bubble bubble-2 bubble-float bubble-float-delay"></div>
-      </div>
-      <div class="container relative z-10">
+      <div class="container">
         <span class="section-tag reveal">Corporate Profile</span>
         <h1 class="reveal">Who we are</h1>
         <p class="reveal">
@@ -68,7 +77,7 @@
       </div>
     </section>
 
-    <section class="section-padding bg-slate-section">
+    <section class="section-padding bg-slate-section" id="company-profile">
       <div class="container about-grid">
         <div class="reveal">
           <span class="section-tag">Corporate History</span>
@@ -113,7 +122,7 @@
       </div>
     </section>
 
-    <section class="section-padding">
+    <section class="section-padding" id="philosophy">
       <div class="container">
         <div class="section-title-wrapper reveal">
           <span class="section-tag">Our Philosophy</span>
@@ -180,7 +189,7 @@
       <h2 class="reveal">Ready to equip your facility?</h2>
       <p class="reveal">Talk to our procurement team about diagnostics, imaging, dialysis, or life-support systems.</p>
       <div class="reveal">
-        <a href="contact.html" class="btn btn-primary uk-btn uk-btn-primary">Request a Quote</a>
+        <a href="contact.html#contact-details-form" class="btn btn-primary uk-btn uk-btn-primary">Request a Quote</a>
       </div>
     </section>
   </main>
@@ -188,19 +197,19 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-col footer-brand">
-        <a href="index.html" class="logo-wrapper" style="width: 190px; height: 44px; display: block;">
+        <a href="index.html" class="logo-wrapper footer-logo" aria-label="Genesis Trading Co. home">
           <img src="images/logo.svg" alt="Genesis Trading Logo">
         </a>
         <p>Supplier of world-class medical equipment and consumables. A newer approach to health technology in Bangladesh.</p>
-        <span style="font-size: 0.85rem; color: var(--muted-light);">Established in 2015</span>
+        <span class="footer-established">Established in 2015</span>
       </div>
       <div class="footer-col">
-        <h3>Site Links</h3>
+        <h3>Explore</h3>
         <ul>
           <li><a href="index.html" class="footer-link">Home</a></li>
           <li><a href="about.html" class="footer-link">About</a></li>
-          <li><a href="products.html" class="footer-link">Product Catalog</a></li>
-          <li><a href="experience.html" class="footer-link">Work Orders</a></li>
+          <li><a href="products.html" class="footer-link">Products</a></li>
+          <li><a href="experience.html" class="footer-link">Experience</a></li>
           <li><a href="contact.html" class="footer-link">Contact</a></li>
         </ul>
       </div>
@@ -210,7 +219,7 @@
           <li><a href="products.html?cat=ivd" class="footer-link">In Vitro Diagnostic</a></li>
           <li><a href="products.html?cat=imaging" class="footer-link">Radiology &amp; Imaging</a></li>
           <li><a href="products.html?cat=hemodialysis" class="footer-link">Hemodialysis</a></li>
-          <li><a href="products.html?cat=lifesupport" class="footer-link">Patient Life Support</a></li>
+          <li><a href="products.html?cat=lifesupport" class="footer-link">Life Support</a></li>
         </ul>
       </div>
       <div class="footer-col">

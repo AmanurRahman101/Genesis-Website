@@ -39,13 +39,26 @@
         <nav aria-label="Main Navigation">
           <ul class="nav-menu">
             <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
+            <li class="has-dropdown">
+              <div class="nav-link-wrap">
+                <a href="about.html" class="nav-link">About</a>
+                <button class="nav-caret-btn" type="button" aria-label="About sections" aria-expanded="false" aria-haspopup="true">
+                  <svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+              <ul class="nav-dropdown" aria-label="About sections">
+                <li><a href="about.html#company-profile">Company Profile</a></li>
+                <li><a href="about.html#philosophy">Mission &amp; Values</a></li>
+                <li><a href="about.html#workforce-details">Our People</a></li>
+              </ul>
+            </li>
             <li><a href="products.html" class="nav-link">Products</a></li>
             <li><a href="experience.html" class="nav-link">Experience</a></li>
             <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            <li class="nav-mobile-cta"><a href="contact.html#contact-details-form" class="btn btn-primary">Get Started</a></li>
           </ul>
         </nav>
-        <a href="contact.html" class="btn btn-primary nav-cta uk-btn uk-btn-primary">Get Started</a>
+        <a href="contact.html#contact-details-form" class="btn btn-primary nav-cta uk-btn uk-btn-primary">Get Started</a>
         <button class="menu-toggle" aria-label="Toggle navigation menu" type="button">
           <span></span><span></span><span></span>
         </button>
@@ -55,16 +68,11 @@
 
   <main>
     <section class="page-hero">
-      <div class="hero-bubbles" aria-hidden="true">
-        <div class="bubble bubble-2 bubble-float"></div>
-        <div class="bubble bubble-4 bubble-float bubble-float-delay"></div>
-      </div>
-      <div class="container relative z-10">
-        <span class="section-tag reveal">Corporate Communications</span>
-        <h1 class="reveal">Contact our procurement team</h1>
-        <p class="reveal">
-          Whether you are managing a public medical college hospital tender or upgrading a private clinical laboratory, we are here to assist.
-        </p>
+      <div class="container">
+        <span class="section-tag reveal">Get in Touch</span>
+        <h1 class="reveal">Contact us</h1>
+        <p class="reveal">For tenders, installations, and service support, call our Dhaka office or send a quotation request.</p>
+        <p class="hero-hotline reveal"><a href="tel:+8802247121519">+88 02 247121519</a></p>
       </div>
     </section>
 
@@ -95,22 +103,20 @@
             </div>
           </div>
 
-          <div class="card-panel reveal" style="padding: 1.5rem;">
-            <h4 class="font-sans text-base font-bold tracking-normal text-ink mb-2">Engineering Support Helpline</h4>
-            <p class="text-sm mb-4">
-              For hospital equipment emergency repair, calibration requests, or reagent refills:
-            </p>
-            <div class="text-sm font-bold text-[var(--accent)]">
-              Hotline: +88 02 247121519 ext. 9
+          <div class="contact-card-item reveal">
+            <div class="contact-card-icon"><i data-lucide="phone-call" style="width:22px;height:22px;stroke-width:1.5"></i></div>
+            <div class="contact-card-text">
+              <h4>Engineering Helpline</h4>
+              <p>Emergency repair, calibration, and reagent support. On-site response within 24 hours.</p>
+              <a href="tel:+8802247121519">+88 02 247121519 ext. 9</a>
             </div>
-            <span class="text-xs text-[var(--muted-light)]">Guaranteed on-site response &lt;24 hours.</span>
           </div>
         </div>
 
         <div class="form-panel reveal uk-card">
-          <h3 class="font-sans text-2xl font-bold tracking-normal text-ink mb-2">Request Product Quotation (RFQ)</h3>
-          <p class="text-sm mb-6">
-            Provide your technical requirements, estimated quantities, and installation details. Our team will prepare a formal RFP response.
+          <h3 class="form-title">Request a quotation</h3>
+          <p class="form-intro">
+            Share the models, quantities, and installation site. We will prepare a formal response.
           </p>
 
           <form id="enquiry-form">
@@ -141,7 +147,7 @@
               <textarea id="enquiry-details" class="form-input uk-textarea" placeholder="Please list the equipment models (e.g. U200 CLIA, Resona R9) and the specific hospital location..." required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary uk-btn uk-btn-primary" style="width: 100%; margin-top: 0.5rem;">Submit RFQ Request</button>
+            <button type="submit" class="btn btn-primary uk-btn uk-btn-primary form-submit">Submit RFQ Request</button>
           </form>
         </div>
       </div>
@@ -151,19 +157,19 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-col footer-brand">
-        <a href="index.html" class="logo-wrapper" style="width: 190px; height: 44px; display: block;">
+        <a href="index.html" class="logo-wrapper footer-logo" aria-label="Genesis Trading Co. home">
           <img src="images/logo.svg" alt="Genesis Trading Logo">
         </a>
         <p>Supplier of world-class medical equipment and consumables. A newer approach to health technology in Bangladesh.</p>
-        <span style="font-size: 0.85rem; color: var(--muted-light);">Established in 2015</span>
+        <span class="footer-established">Established in 2015</span>
       </div>
       <div class="footer-col">
-        <h3>Site Links</h3>
+        <h3>Explore</h3>
         <ul>
           <li><a href="index.html" class="footer-link">Home</a></li>
           <li><a href="about.html" class="footer-link">About</a></li>
-          <li><a href="products.html" class="footer-link">Product Catalog</a></li>
-          <li><a href="experience.html" class="footer-link">Work Orders</a></li>
+          <li><a href="products.html" class="footer-link">Products</a></li>
+          <li><a href="experience.html" class="footer-link">Experience</a></li>
           <li><a href="contact.html" class="footer-link">Contact</a></li>
         </ul>
       </div>
@@ -173,7 +179,7 @@
           <li><a href="products.html?cat=ivd" class="footer-link">In Vitro Diagnostic</a></li>
           <li><a href="products.html?cat=imaging" class="footer-link">Radiology &amp; Imaging</a></li>
           <li><a href="products.html?cat=hemodialysis" class="footer-link">Hemodialysis</a></li>
-          <li><a href="products.html?cat=lifesupport" class="footer-link">Patient Life Support</a></li>
+          <li><a href="products.html?cat=lifesupport" class="footer-link">Life Support</a></li>
         </ul>
       </div>
       <div class="footer-col">

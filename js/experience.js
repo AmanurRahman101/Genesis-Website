@@ -154,7 +154,7 @@ function renderWorkOrders(orders) {
 
   orders.forEach(order => {
     const card = document.createElement('div');
-    card.className = 'work-order-card glass-panel glow-card';
+    card.className = `work-order-card ${order.rawCrore > 10 ? 'is-major' : ''}`;
     
     // Generate detail bullet list
     let detailsHTML = '';
@@ -163,14 +163,10 @@ function renderWorkOrders(orders) {
     });
 
     // Custom CSS background representation using inline linear-gradient based on project value
-    const blueGradient = 'linear-gradient(135deg, #008cd6 0%, #004d7a 100%)';
-    const crimsonGradient = 'linear-gradient(135deg, #e92330 0%, #8b0000 100%)';
-    const bgGrad = order.rawCrore > 10 ? crimsonGradient : blueGradient;
-
     card.innerHTML = `
-      <div class="work-order-visual-box" style="background: ${bgGrad}; display:flex; flex-direction:column; justify-content:center; align-items:center; padding: 20px;">
+      <div class="work-order-visual-box">
         <div class="work-order-value-tag">${order.totalValue.includes('Over') ? 'Over BDT ' + order.rawCrore + ' Cr' : 'BDT ' + order.rawCrore + ' Cr'}</div>
-        <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:0.85rem; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; z-index:1; margin-top:20px;">
+        <div class="work-order-year">
           ${order.year}
         </div>
       </div>
@@ -179,9 +175,9 @@ function renderWorkOrders(orders) {
         <div class="work-order-location">${order.location}</div>
         <p class="work-order-desc">${order.scope}</p>
         
-        <div style="border-top:1.5px solid var(--gray-200); padding-top:16px; margin-top:auto;">
-          <h4 style="font-size:0.82rem; font-weight:700; margin-bottom:8px; text-transform:uppercase; color:var(--dark);">Sub-Contracts & Details</h4>
-          <ul style="list-style:none; padding:0; color:var(--gray-600);">
+        <div class="work-order-details">
+          <h4>Sub-Contracts &amp; Details</h4>
+          <ul>
             ${detailsHTML}
           </ul>
         </div>

@@ -39,13 +39,26 @@
         <nav aria-label="Main Navigation">
           <ul class="nav-menu">
             <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
+            <li class="has-dropdown">
+              <div class="nav-link-wrap">
+                <a href="about.html" class="nav-link">About</a>
+                <button class="nav-caret-btn" type="button" aria-label="About sections" aria-expanded="false" aria-haspopup="true">
+                  <svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+              <ul class="nav-dropdown" aria-label="About sections">
+                <li><a href="about.html#company-profile">Company Profile</a></li>
+                <li><a href="about.html#philosophy">Mission &amp; Values</a></li>
+                <li><a href="about.html#workforce-details">Our People</a></li>
+              </ul>
+            </li>
             <li><a href="products.html" class="nav-link active">Products</a></li>
             <li><a href="experience.html" class="nav-link">Experience</a></li>
             <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-mobile-cta"><a href="contact.html#contact-details-form" class="btn btn-primary">Get Started</a></li>
           </ul>
         </nav>
-        <a href="contact.html" class="btn btn-primary nav-cta uk-btn uk-btn-primary">Get Started</a>
+        <a href="contact.html#contact-details-form" class="btn btn-primary nav-cta uk-btn uk-btn-primary">Get Started</a>
         <button class="menu-toggle" aria-label="Toggle navigation menu" type="button">
           <span></span><span></span><span></span>
         </button>
@@ -54,7 +67,15 @@
   </header>
 
   <main>
-    <div class="catalog-layout container">
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-tag reveal">Product Catalog</span>
+        <h1 class="reveal">Equipment built for clinical work</h1>
+        <p class="reveal">Search models, filter by category, and request a quotation for diagnostics, imaging, dialysis, and life support.</p>
+      </div>
+    </section>
+
+    <div class="catalog-layout container" id="product-catalog">
       <aside class="filter-sidebar">
         <div class="filter-group">
           <h3 class="filter-title">Categories</h3>
@@ -75,6 +96,10 @@
               <span>Hemodialysis</span>
               <span class="filter-count" id="count-hemo">3</span>
             </button>
+            <button class="filter-btn" data-filter-cat="lifesupport" type="button">
+              <span>Life Support</span>
+              <span class="filter-count" id="count-lifesupport">2</span>
+            </button>
           </div>
         </div>
 
@@ -93,35 +118,28 @@
       </aside>
 
       <div class="products-panel">
-        <div class="mb-6">
-          <span class="section-tag">Medical Diagnostics Ecosystem</span>
-          <h1 class="font-display text-4xl text-ink mb-2" style="font-size: clamp(2rem, 4vw, 2.75rem);">Product catalog</h1>
-          <p class="text-gray text-sm">
-            Genesis Trading Co. represents over 90+ global brands. Search below or toggle filters on the left.
-          </p>
-        </div>
-
-        <div class="search-wrapper">
-          <i data-lucide="search" class="search-icon-svg" style="width:18px;height:18px;stroke-width:1.5"></i>
-          <input type="text" id="product-search" class="search-input" placeholder="Search by model, brand name, parameters, or clinic categories...">
-        </div>
-
-        <div class="mb-4 text-sm font-medium text-gray">
-          Showing <span id="catalog-results-count">0</span> matching models
+        <div class="catalog-toolbar">
+          <div class="search-wrapper">
+            <i data-lucide="search" class="search-icon-svg" style="width:18px;height:18px;stroke-width:1.5"></i>
+            <input type="text" id="product-search" class="search-input" placeholder="Search by model, brand, or category">
+          </div>
+          <div class="catalog-count text-sm font-medium">
+            Showing <span id="catalog-results-count">0</span> matching models
+          </div>
         </div>
 
         <div class="products-grid" id="products-grid-container"></div>
 
-        <div id="test-panels" class="mt-16 border-t border-[var(--border)] pt-14">
-          <div class="mb-8">
+        <div id="test-panels" class="catalog-panels">
+          <div class="section-title-wrapper">
             <span class="section-tag">Clinical Chemistry</span>
-            <h2 class="font-display text-3xl text-ink mb-2">Authorized laboratory test panels</h2>
-            <p class="text-gray text-sm">Reagent coverage and profiles supported across automated analyzers.</p>
+            <h2 class="section-title">Authorized laboratory test panels</h2>
+            <p class="section-subtitle">Reagent coverage supported across automated analyzers.</p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div class="soft-card">
-              <h3 class="font-sans text-lg font-bold tracking-normal text-brand mb-4">CLIA Diagnostic Panels</h3>
+              <h3 class="font-sans text-lg font-bold tracking-normal text-ink mb-4">CLIA Diagnostic Panels</h3>
               <div class="grid grid-cols-2 gap-4 text-xs text-[var(--muted)]">
                 <div>
                   <h4 class="font-sans text-sm font-bold text-ink mb-2">Infectious Diseases</h4>
@@ -143,7 +161,7 @@
             </div>
 
             <div class="soft-card">
-              <h3 class="font-sans text-lg font-bold tracking-normal text-[var(--accent)] mb-4">Biochemistry Panels</h3>
+              <h3 class="font-sans text-lg font-bold tracking-normal text-ink mb-4">Biochemistry Panels</h3>
               <div class="grid grid-cols-2 gap-4 text-xs text-[var(--muted)]">
                 <div>
                   <h4 class="font-sans text-sm font-bold text-ink mb-2">Hepatic (Liver)</h4>
@@ -163,22 +181,69 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
 
-        <div class="mt-14 rounded-4xl bg-[var(--surface)] border border-[var(--border)] p-10 text-center">
-          <h2 class="font-display text-3xl text-ink mb-2">Need a custom tender quotation?</h2>
-          <p class="text-gray text-sm max-w-lg mx-auto mb-5">
-            We prepare compliance sheets and B2B pricing models for hospital procurement tenders.
-          </p>
-          <a href="contact.html" class="btn btn-primary uk-btn uk-btn-primary">Request Quote (RFQ)</a>
-        </div>
+    <section class="cta-sky">
+      <h2 class="reveal">Need a custom tender quotation?</h2>
+      <p class="reveal">We prepare compliance sheets and B2B pricing for hospital procurement.</p>
+      <div class="reveal">
+        <a href="contact.html#contact-details-form" class="btn btn-primary uk-btn uk-btn-primary">Request a Quote</a>
+      </div>
+    </section>
+  </main>
 
-        <div class="mt-14 border-t border-[var(--border)] pt-8 text-xs text-[var(--muted-light)] flex justify-between items-center flex-wrap gap-3">
-          <span>&copy; 2026 Genesis Trading Co. All rights reserved.</span>
-          <a href="mailto:admin@genesistrading.biz">admin@genesistrading.biz</a>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="logo-wrapper footer-logo" aria-label="Genesis Trading Co. home">
+          <img src="images/logo.svg" alt="Genesis Trading Logo">
+        </a>
+        <p>Supplier of world-class medical equipment and consumables. A newer approach to health technology in Bangladesh.</p>
+        <span class="footer-established">Established in 2015</span>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="about.html" class="footer-link">About</a></li>
+          <li><a href="products.html" class="footer-link">Products</a></li>
+          <li><a href="experience.html" class="footer-link">Experience</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="products.html?cat=ivd" class="footer-link">In Vitro Diagnostic</a></li>
+          <li><a href="products.html?cat=imaging" class="footer-link">Radiology &amp; Imaging</a></li>
+          <li><a href="products.html?cat=hemodialysis" class="footer-link">Hemodialysis</a></li>
+          <li><a href="products.html?cat=lifesupport" class="footer-link">Life Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Headquarters</h3>
+        <div class="footer-contact">
+          <div class="contact-item">
+            <span class="contact-icon"><i data-lucide="map-pin" style="width:16px;height:16px;stroke-width:1.5"></i></span>
+            <span>Ivory Krishnochura, 3/1-E (7th floor), Purana Paltan, Dhaka-1000, Bangladesh</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i data-lucide="mail" style="width:16px;height:16px;stroke-width:1.5"></i></span>
+            <a href="mailto:admin@genesistrading.biz">admin@genesistrading.biz</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i data-lucide="phone" style="width:16px;height:16px;stroke-width:1.5"></i></span>
+            <a href="tel:+8802247121519">+88 02 247121519</a>
+          </div>
         </div>
       </div>
     </div>
-  </main>
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Genesis Trading Co. All rights reserved.</div>
+      <div><a href="http://www.genesistradingco.com" target="_blank" rel="noopener">www.genesistradingco.com</a></div>
+    </div>
+  </footer>
 
   <div class="modal-overlay" id="modal-overlay-specs">
     <div class="modal-container dark-glass-panel">
