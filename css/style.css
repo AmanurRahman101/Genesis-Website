@@ -332,14 +332,21 @@ img, svg { display: block; max-width: 100%; }
 .logo-wrapper {
   display: flex;
   align-items: center;
-  height: 36px;
-  width: 160px;
+  height: 40px;
+  width: auto;
+  max-width: 180px;
   flex-shrink: 0;
 }
 
 .logo-wrapper img {
   height: 100%;
   width: auto;
+  object-fit: contain;
+}
+
+.footer-logo {
+  height: 46px;
+  max-width: 205px;
 }
 
 .nav-menu {
@@ -890,164 +897,562 @@ img, svg { display: block; max-width: 100%; }
 .catalog-layout {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem;
   padding-top: 1.5rem;
   padding-bottom: 3.5rem;
-}
-
-.filter-sidebar {
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 1.25rem;
 }
 
 @media (min-width: 1025px) {
   .catalog-layout {
     display: grid;
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 310px 1fr;
     gap: 2.5rem;
     align-items: start;
     padding-top: 2rem;
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
   }
 
-  .filter-sidebar {
+  .unimed-sidebar {
     position: sticky;
-    top: calc(var(--header-height) + 1.25rem);
-    max-height: calc(100vh - var(--header-height) - 2.5rem);
+    top: calc(var(--header-height) + 1.5rem);
+    max-height: min(82vh, 820px);
     overflow-y: auto;
-    border-bottom: none;
     border-right: 1px solid var(--border);
     padding: 0 1.5rem 1.5rem 0;
     scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+  }
+
+  .unimed-sidebar::-webkit-scrollbar {
+    width: 5px;
+  }
+  .unimed-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .unimed-sidebar::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 4px;
+  }
+  .unimed-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e1;
   }
 }
 
-.filter-group { margin-bottom: 1.5rem; }
-
-.filter-title {
+/* Sidebar Styling - Unimed Structure, Genesis Brand */
+.filter-title-main {
   font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin-bottom: 0.75rem;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.5rem;
-  letter-spacing: 0;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 0.9rem;
+  letter-spacing: -0.01em;
 }
 
-.filter-options {
+.unimed-category-list {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.4rem;
 }
 
-.filter-btn {
+.category-accordion-item {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.cat-accordion-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: none;
-  border: none;
-  text-align: left;
-  padding: 0.45rem 0.65rem;
-  border-radius: 0.75rem;
-  color: var(--muted);
-  font-weight: 500;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 0.86rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: var(--transition);
+  text-align: left;
+  transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 0.5rem;
 }
 
-.filter-btn:hover,
-.filter-btn.active {
-  color: var(--ink);
-  background: var(--surface-card);
+.cat-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+  flex-grow: 1;
 }
 
-.filter-btn.active { font-weight: 700; }
-
-.filter-count {
-  font-size: 0.7rem;
-  background: var(--gray-200);
-  padding: 0.1rem 0.45rem;
-  border-radius: var(--radius-pill);
+.cat-icon,
+.cat-icon-svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  color: #64748b;
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: middle;
+  transition: color 0.2s ease, fill 0.2s ease;
 }
 
-.filter-btn.active .filter-count {
-  background: var(--ink);
-  color: #fff;
+.cat-title {
+  white-space: normal;
+  line-height: 1.3;
+  font-size: 0.86rem;
+  word-break: break-word;
 }
 
-.search-wrapper {
-  margin-bottom: 1.5rem;
+.cat-chevron {
+  width: 15px;
+  height: 15px;
+  color: #94a3b8;
+  flex-shrink: 0;
+  margin-left: auto;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+}
+
+.cat-count {
+  display: none;
+}
+
+/* Hover on closed accordion header */
+.cat-accordion-header:hover {
+  background: #f0f9ff;
+  border-color: #bae6fd;
+  color: #008cd6;
+}
+
+.cat-accordion-header:hover .cat-icon,
+.cat-accordion-header:hover .cat-icon-svg,
+.cat-accordion-header:hover .cat-chevron {
+  color: #008cd6;
+  fill: #008cd6;
+}
+
+/* Open Accordion State (Genesis Signature Brand Blue) */
+.category-accordion-item.open .cat-accordion-header,
+.cat-accordion-header[aria-expanded="true"] {
+  background: #008cd6 !important;
+  border-color: #008cd6 !important;
+  color: #ffffff !important;
+  border-radius: 8px 8px 0 0 !important;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 140, 214, 0.2);
+}
+
+.category-accordion-item.open .cat-icon,
+.category-accordion-item.open .cat-icon-svg,
+.cat-accordion-header[aria-expanded="true"] .cat-icon,
+.cat-accordion-header[aria-expanded="true"] .cat-icon-svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+.category-accordion-item.open .cat-title,
+.cat-accordion-header[aria-expanded="true"] .cat-title {
+  color: #ffffff !important;
+}
+
+.category-accordion-item.open .cat-chevron,
+.cat-accordion-header[aria-expanded="true"] .cat-chevron {
+  color: #ffffff !important;
+  transform: rotate(180deg);
+}
+
+/* "All Products" Button Active State */
+.cat-accordion-header.active-all,
+.category-accordion-item[data-category="all"].active .cat-accordion-header {
+  background: #008cd6 !important;
+  border-color: #008cd6 !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 140, 214, 0.2);
+}
+
+.cat-accordion-header.active-all .cat-icon,
+.category-accordion-item[data-category="all"].active .cat-icon {
+  color: #ffffff !important;
+}
+
+.cat-accordion-header.active-all .cat-chevron,
+.category-accordion-item[data-category="all"].active .cat-chevron {
+  color: #ffffff !important;
+  opacity: 0.9;
+}
+
+/* Subcategory Body & Items */
+.cat-accordion-body {
+  display: none;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 0.35rem 0 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 140, 214, 0.05);
+  animation: accordionSlideDown 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes accordionSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.category-accordion-item.open .cat-accordion-body {
+  display: block;
+}
+
+.subcat-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.subcat-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 0.6rem 1rem 0.6rem 2.2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #475569;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
   position: relative;
 }
 
-.search-input {
-  width: 100%;
-  padding: 0.9rem 1rem 0.9rem 2.85rem;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--border);
-  font-size: 0.95rem;
-  background: var(--white);
-  transition: border-color var(--transition), box-shadow var(--transition);
-}
-
-.search-input:focus {
-  border-color: rgba(0, 140, 214, 0.45);
-  box-shadow: 0 0 0 4px rgba(0, 140, 214, 0.1);
-}
-
-.search-icon-svg {
+.subcat-btn::before {
+  content: "";
   position: absolute;
-  left: 1rem;
+  left: 1.15rem;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--muted-light);
-  width: 18px;
-  height: 18px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  transition: all 0.2s ease;
 }
 
-.products-grid {
+.subcat-btn:hover {
+  color: #008cd6;
+  background: #f0f9ff;
+  padding-left: 2.35rem;
+}
+
+.subcat-btn:hover::before {
+  background: #008cd6;
+  width: 5px;
+  height: 5px;
+}
+
+.subcat-btn.active {
+  color: #008cd6;
+  font-weight: 700;
+  background: #eaf4fc;
+}
+
+.subcat-btn.active::before {
+  background: #008cd6;
+  width: 5px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+/* Quick Filters Section */
+.quick-filters-section {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.quick-filters-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.quick-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.quick-pill {
+  padding: 0.35rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-pill:hover {
+  border-color: #008cd6;
+  color: #008cd6;
+}
+
+.quick-pill.active {
+  background: #008cd6;
+  color: #ffffff;
+  border-color: #008cd6;
+  box-shadow: 0 2px 8px rgba(0, 140, 214, 0.25);
+}
+
+/* Manufacturers Section */
+.manufacturers-section {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.filter-subtitle {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #0f172a;
+  margin-bottom: 0.65rem;
+}
+
+.manufacturer-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.brand-pill {
+  padding: 0.28rem 0.7rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.brand-pill:hover {
+  border-color: #008cd6;
+  color: #008cd6;
+}
+
+.brand-pill.active {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+  font-weight: 600;
+}
+
+/* Toolbar - Unimed Style */
+.unimed-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  flex-grow: 1;
+  max-width: 600px;
+}
+
+.unimed-search-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 9999px;
+  padding: 3px 3px 3px 14px;
+  flex-grow: 1;
+  min-width: 220px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.unimed-search-box:focus-within {
+  border-color: #008cd6;
+  box-shadow: 0 0 0 3px rgba(0, 140, 214, 0.15);
+}
+
+.unimed-search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.88rem;
+  width: 100%;
+  color: #0f172a;
+  padding: 0.4rem 0;
+}
+
+.unimed-search-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  background: #008cd6;
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.unimed-search-btn:hover {
+  background: #0284c7;
+  transform: scale(1.04);
+}
+
+.unimed-sort-select {
+  border: 1px solid #cbd5e1;
+  border-radius: 9999px;
+  background: #ffffff;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #334155;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.unimed-sort-select:focus {
+  border-color: #008cd6;
+}
+
+.catalog-count {
+  font-size: 0.88rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Product Cards Grid - Unimed Style */
+.unimed-products-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.15rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .unimed-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1380px) {
+  .unimed-products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .product-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  transition: var(--transition);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
 }
 
 .product-card:hover {
-  box-shadow: var(--shadow-float);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -4px rgba(0, 140, 214, 0.12);
+  border-color: #93c5fd;
 }
 
 .product-img-box {
-  height: 160px;
-  background: linear-gradient(160deg, var(--sky-mist), var(--surface));
+  height: 200px;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 1rem;
+  padding: 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.equip-svg {
+  width: 100%;
+  height: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.05));
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .equip-svg {
+  transform: scale(1.03);
+}
+
+.product-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  border-radius: 9999px;
+  padding: 3px 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.badge-new {
+  background: #10b981;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+}
+
+.badge-bestseller {
+  background: #f59e0b;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.3);
 }
 
 .product-origin-badge {
   position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  font-size: 0.7rem;
+  bottom: 10px;
+  left: 12px;
+  font-size: 0.68rem;
   font-weight: 600;
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--border);
-  color: var(--muted);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  backdrop-filter: blur(4px);
 }
 
 .product-info-box {
@@ -1059,59 +1464,164 @@ img, svg { display: block; max-width: 100%; }
 
 .product-category-name {
   font-size: 0.72rem;
-  color: var(--brand);
+  color: #008cd6;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.25rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
 }
 
 .product-model-name {
   font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 0.2rem;
-  letter-spacing: 0;
+  font-weight: 800;
+  font-size: 1.22rem;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+  line-height: 1.25;
 }
 
 .product-brand-line {
-  font-size: 0.85rem;
-  color: var(--muted);
-  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 0.65rem;
+}
+
+.product-desc-text {
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 0.85rem;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.feature-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  transition: all 0.2s ease;
+}
+
+.product-card:hover .feature-tag {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
 }
 
 .product-card-footer {
   margin-top: auto;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid #f1f5f9;
   padding-top: 0.85rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.cert-pill {
+  background: #f0f9ff;
+  color: #0284c7;
+  border: 1px solid #bae6fd;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.product-action-group {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
 .product-spec-btn {
   background: none;
   border: none;
-  color: var(--muted);
+  color: #64748b;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   cursor: pointer;
+  transition: color 0.2s;
 }
 
-.product-spec-btn:hover { color: var(--brand); }
+.product-spec-btn:hover {
+  color: #008cd6;
+}
 
 .product-card-cta {
-  font-size: 0.8rem;
-  padding: 0.45rem 0.85rem;
-  border-radius: var(--radius-pill);
-  font-weight: 600;
-  background: var(--ink);
-  color: #fff;
+  font-size: 0.78rem;
+  padding: 0.42rem 1rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  background: #008cd6;
+  color: #ffffff;
   border: none;
   cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 140, 214, 0.2);
 }
 
-.product-card-cta:hover { background: #1e293b; }
+.product-card-cta:hover {
+  background: #0284c7;
+  box-shadow: 0 4px 12px rgba(0, 140, 214, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Load More Container */
+.load-more-container {
+  margin: 2.75rem 0 2rem;
+  text-align: center;
+}
+
+.btn-load-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2.5rem;
+  border: 2px solid #008cd6;
+  border-radius: 9999px;
+  background: transparent;
+  color: #008cd6;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-load-more:hover {
+  background: #008cd6;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 140, 214, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Test Panels Section (Standalone) */
+.test-panels-section {
+  padding: 4.5rem 0 5rem;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
 
 /* ---------- Contact ---------- */
 .contact-layout-grid {
