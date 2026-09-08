@@ -194,7 +194,7 @@ function ensureCatalogFooter() {
   footer.className = 'site-footer catalog-footer';
   footer.innerHTML = `
     <div class="container footer-grid">
-      <div class="footer-col footer-brand"><a href="index.html" class="logo-wrapper footer-logo"><img src="images/logo.svg" alt="Genesis Trading Logo"></a><p>Medical equipment, diagnostics, and lifecycle support across Bangladesh.</p></div>
+      <div class="footer-col footer-brand"><a href="index.html" class="logo-wrapper footer-logo"><img src="images/logo.png?v=2" alt="Genesis Trading Logo"></a><p>Medical equipment, diagnostics, and lifecycle support across Bangladesh.</p></div>
       <div class="footer-col"><h3>Explore</h3><ul><li><a href="index.html" class="footer-link">Home</a></li><li><a href="about.html" class="footer-link">About</a></li><li><a href="experience.html" class="footer-link">Experience</a></li><li><a href="contact.html" class="footer-link">Contact</a></li></ul></div>
       <div class="footer-col"><h3>Categories</h3><ul><li><a href="products.html?cat=ivd" class="footer-link">Diagnostics</a></li><li><a href="products.html?cat=imaging" class="footer-link">Imaging</a></li><li><a href="products.html?cat=hemodialysis" class="footer-link">Hemodialysis</a></li><li><a href="products.html?cat=lifesupport" class="footer-link">Life support</a></li></ul></div>
       <div class="footer-col"><h3>Headquarters</h3><div class="footer-contact"><div class="contact-item">Dhaka, Bangladesh</div><div class="contact-item"><a href="mailto:admin@genesistrading.biz">admin@genesistrading.biz</a></div><div class="contact-item"><a href="tel:+8802247121519">+88 02 247121519</a></div></div></div>
