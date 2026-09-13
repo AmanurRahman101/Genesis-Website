@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ensureCatalogFooter();
   setupPartnerSlider();
   setupContactFormHandler();
+  setupBrandVideo();
   setupLucideIcons();
   setupGsapAnimations();
 });
@@ -209,9 +210,11 @@ function setupPartnerSlider() {
   if (!sliderTrack) return;
 
   const partners = [
+    { name: 'Canon Medical Systems', origin: 'Japan', logo: 'images/partners/canon.svg' },
+    { name: 'Olympus', origin: 'Japan', logo: 'images/partners/olympus.svg' },
     { name: 'ALCOR Scientific', origin: 'USA', logo: 'images/partners/alcor-scientific.jpg' },
     { name: 'Boditech', origin: 'Korea', logo: 'images/partners/boditech.png' },
-    { name: 'Unimed', origin: 'Turkiye', logo: 'images/partners/unimed.svg' },
+    { name: 'Unimed', origin: 'Turkiye', logo: 'images/partners/unimed.png' },
     { name: 'Maccura', origin: 'China', logo: 'images/partners/maccura.svg' },
     { name: 'Snibe', origin: 'China', logo: 'images/partners/snibe.png' },
     { name: 'Erba Mannheim', origin: 'Czech Republic', logo: 'images/partners/erba-mannheim.png' },
@@ -381,3 +384,41 @@ function showToast(message) {
 
 window.showToast = showToast;
 window.setupLucideIcons = setupLucideIcons;
+
+/* ========================================================================
+   HERO BRAND BACKGROUND VIDEO (MINIMAL & SILENT)
+   ======================================================================== */
+function setupBrandVideo() {
+  const heroVideo = document.getElementById('hero-bg-video');
+  if (!heroVideo) return;
+
+  heroVideo.muted = true;
+  heroVideo.playsInline = true;
+  heroVideo.loop = true;
+
+  const playPromise = heroVideo.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      // Auto-play was prevented; play seamlessly on first user engagement
+      const startOnInteraction = () => {
+        heroVideo.play().catch(() => {});
+        window.removeEventListener('scroll', startOnInteraction);
+        window.removeEventListener('click', startOnInteraction);
+        window.removeEventListener('touchstart', startOnInteraction);
+      };
+      window.addEventListener('scroll', startOnInteraction, { passive: true, once: true });
+      window.addEventListener('click', startOnInteraction, { once: true });
+      window.addEventListener('touchstart', startOnInteraction, { passive: true, once: true });
+    });
+  }
+
+  // Pause when tab is not active to save battery and GPU
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      heroVideo.pause();
+    } else {
+      heroVideo.play().catch(() => {});
+    }
+  });
+}
+

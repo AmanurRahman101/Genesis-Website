@@ -11,6 +11,31 @@ const productsData = [
   // 1. COMPUTED TOMOGRAPHY (CT) SYSTEMS - Formal Name
   // =========================================================================
   {
+    id: 'ct-canon-aquilion-precision',
+    model: 'Aquilion Precision',
+    brand: 'Canon Medical Systems',
+    origin: 'Japan',
+    category: 'ct-scan',
+    series: 'uhr',
+    legacyCategory: 'imaging',
+    subCategory: 'Computed Tomography (CT) Systems',
+    formalName: 'Ultra-High Resolution CT (UHR CT) Systems',
+    image: 'images/products/canon-aquilion-precision.png',
+    description: "World's first Ultra-High Resolution CT (UHR CT) scanner with 0.25 mm x 160 detector rows capable of resolving anatomy down to 150 microns, powered by AiCE Deep Learning reconstruction for unprecedented clarity in neuro, vascular, and cardiac imaging.",
+    features: [
+      '0.25 mm x 160-row ultra-high resolution detector array',
+      '150-micron isotropic spatial resolution (2x resolution of conventional CT)',
+      'AiCE (Advanced Intelligent Clear-IQ Engine) Deep Learning Reconstruction',
+      'Ultra-fine 0.4 x 0.5 mm focal spot x-ray tube technology',
+      '896-channel matrix with 1792 view rates per gantry rotation',
+      '78 cm large patient bore aperture with lateral couch shift'
+    ],
+    tags: ['Ultra-High Resolution', '0.25mm Detector', 'AiCE Deep Learning'],
+    badge: 'NEW',
+    quickFilters: ['new', 'ce', 'stat', 'bestseller'],
+    ceCertified: true
+  },
+  {
     id: 'ct-neuviz-128',
     model: 'NeuViz 128 CT',
     brand: 'Genesis Healthcare',
@@ -86,6 +111,31 @@ const productsData = [
   // =========================================================================
   // 2. MAGNETIC RESONANCE IMAGING (MRI) SYSTEMS - Formal Name
   // =========================================================================
+  {
+    id: 'mri-canon-vantage-galan-3t',
+    model: 'Vantage Galan 3T',
+    brand: 'Canon Medical Systems',
+    origin: 'Japan',
+    category: 'mri-scan',
+    series: '30t',
+    legacyCategory: 'imaging',
+    subCategory: 'Magnetic Resonance Imaging (MRI) Systems',
+    formalName: '3.0 Tesla High-Field MRI Systems',
+    image: 'images/products/canon-vantage-galan-3t.png',
+    description: 'Flagship 3.0 Tesla high-field clinical MRI scanner featuring Pianissimo Zen whisper-quiet scanning technology, a wide 71 cm patient bore, and AiCE AI noise-reduction reconstruction for ultra-fast, motion-free imaging.',
+    features: [
+      '3.0 Tesla ultra-homogeneous superconducting magnet with active shielding',
+      'Pianissimo Zen acoustic noise reduction (reduces sound pressure up to 99%)',
+      'AiCE (Advanced Intelligent Clear-IQ Engine) Deep Learning Reconstruction for MRI',
+      '71 cm extra-wide bore opening to virtually eliminate patient claustrophobia',
+      'Saturn X-gradient technology for exceptional diffusion and fMRI neuroimaging',
+      'Purified multi-channel digital RF receiver system with whole-body matrix coils'
+    ],
+    tags: ['3.0 Tesla', 'Pianissimo Zen Quiet', 'AiCE Deep Learning'],
+    badge: 'BEST SELLER',
+    quickFilters: ['bestseller', 'ce', 'new'],
+    ceCertified: true
+  },
   {
     id: 'mri-vantage-15t',
     model: 'Vantage 1.5T MRI',
@@ -172,6 +222,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Chemiluminescence (CLIA)',
     formalName: 'Chemiluminescence Immunoassay (CLIA) Analyzers',
+    image: 'images/products/unimed-u200.png',
     description: 'Automatic Analyzer (200 T/H) - Advanced chemiluminescence immunoassay system with high throughput and precision for hospital core laboratories.',
     features: [
       'Constant throughput up to 200 tests/hour',
@@ -196,6 +247,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Chemiluminescence (CLIA)',
     formalName: 'Chemiluminescence Immunoassay (CLIA) Analyzers',
+    image: 'images/products/unimed-u180.png',
     description: 'Automatic Analyzer (180 T/H) - Reliable chemiluminescence immunoassay system for medium-throughput laboratories with continuous workflow loading.',
     features: [
       'Throughput of up to 180 tests/hour',
@@ -220,6 +272,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Chemiluminescence (CLIA)',
     formalName: 'Chemiluminescence Immunoassay (CLIA) Analyzers',
+    image: 'images/products/unimed-u300.png',
     description: 'High-Throughput Automatic Chemiluminescence Analyzer (300 T/H) engineered for high-volume central diagnostic laboratories and hospital networks.',
     features: [
       'High-speed throughput of 300 tests/hour constant',
@@ -248,6 +301,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Hematology Analyzers',
     formalName: 'Automated Hematology Analyzers',
+    image: 'images/products/unimed-uh560.png',
     description: '6-Part Analyzer - Advanced hematology analyzer with comprehensive blood cell analysis and reticulocyte counting for rigorous clinical evaluations.',
     features: [
       '6-Part WBC differential counting with 34 diagnostic parameters',
@@ -272,6 +326,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Hematology Analyzers',
     formalName: 'Automated Hematology Analyzers',
+    image: 'images/products/unimed-uh560.png',
     description: '6-Part Analyzer with Reticulocytes - Comprehensive hematology analyzer including reticulocyte analysis and optical platelet counts.',
     features: [
       '6-Part differential + Reticulocyte (RET%, RET#, IRF, LFR, MFR, HFR)',
@@ -296,6 +351,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Hematology Analyzers',
     formalName: 'Automated Hematology Analyzers',
+    image: 'images/products/unimed-uh560.png',
     description: '6-Part Analyzer (High Speed) - Ultra-fast hematology analyzer for high volume hospital core laboratories requiring relentless throughput.',
     features: [
       '6-Part WBC differentiation with RET & Nucleated RBC (NRBC)',
@@ -320,6 +376,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Hematology Analyzers',
     formalName: 'Automated Hematology Analyzers',
+    image: 'images/products/unimed-uh580.png',
     description: '5-Part Analyzer (80 T/H) - Reliable 5-part differential hematology analyzer for medium-sized clinical laboratories and emergency diagnostic clinics.',
     features: [
       '5-Part WBC differential (Neutrophils, Lymphocytes, Monocytes, Eosinophils, Basophils)',
@@ -332,6 +389,31 @@ const productsData = [
     tags: ['5-Part', '80 T/H', 'Compact Benchtop'],
     badge: 'BEST SELLER',
     quickFilters: ['bestseller', 'ce'],
+    ceCertified: true
+  },
+  {
+    id: 'uh560',
+    model: 'UH 560',
+    brand: 'Unimed',
+    origin: 'Turkiye',
+    category: 'hematology',
+    series: '5-part',
+    legacyCategory: 'ivd',
+    subCategory: 'Hematology Analyzers',
+    formalName: 'Automated Hematology Analyzers',
+    image: 'images/products/unimed-uh560.png',
+    description: 'Automatic 5-Part Differential Hematology Analyzer - Compact clinical benchtop analyzer providing 29 hematology parameters, tri-angle laser scatter, and micro-sampling for high diagnostic accuracy.',
+    features: [
+      '5-Part WBC differential with 29 clinical diagnostic parameters',
+      'Throughput of up to 60 samples/hour with automated sampling probe',
+      'Tri-angle semiconductor laser scatter + chemical dye flow cytometry',
+      'Micro-volume sampling requires only 15 µL of whole blood',
+      'Independent basophil optical channel for robust differentiation',
+      'Intelligent abnormal cell flag detection and auto-rerun protocol'
+    ],
+    tags: ['5-Part', 'Laser Scatter', 'Micro-Sampling'],
+    badge: 'NEW',
+    quickFilters: ['new', 'ce', 'stat'],
     ceCertified: true
   },
 
@@ -348,6 +430,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Modular Automation',
     formalName: 'Total Laboratory Automation (TLA) & Modular Systems',
+    image: 'images/products/unimed-labas-m.png',
     description: 'Total Laboratory Automation (TLA) modular solution integrating pre-analytical centrifugation, automated decapping, track sorting, analytical docking, and refrigerated archiving.',
     features: [
       'Flexible modular track expands up to 12 analytical instruments',
@@ -375,6 +458,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Urinalysis & Feces Analysis',
     formalName: 'Automated Urinalysis & Feces Diagnostic Systems',
+    image: 'images/products/unimed-uri-300.png',
     description: 'Fully automated urine chemistry and sediment analyzer, combining digital high-resolution flow microscopy with multi-wavelength dry test strip reflectance photometry.',
     features: [
       'High-resolution digital CCD microscope with planar flow cell',
@@ -398,6 +482,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Urinalysis & Feces Analysis',
     formalName: 'Automated Urinalysis & Feces Diagnostic Systems',
+    image: 'images/products/unimed-fa-60.png',
     description: 'Specialized automated stool analyzer for microscopic morphology and occult blood chemical analysis with a completely sealed anti-odor containment chamber.',
     features: [
       'Fully enclosed sealed testing chamber eliminates biohazard odor',
@@ -421,6 +506,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Urinalysis & Feces Analysis',
     formalName: 'Automated Urinalysis & Feces Diagnostic Systems',
+    image: 'images/products/unimed-vsa-60.png',
     description: 'Automated diagnostic system for standardized screening of vaginal secretions, wet mount morphological inspection, and biochemical infection panels.',
     features: [
       'Automated phase-contrast morphology and digital microscopic photography',
@@ -439,6 +525,31 @@ const productsData = [
   // 7. GLYCOHEMOGLOBIN (HbA1c) - Unimed
   // =========================================================================
   {
+    id: 'ah-600',
+    model: 'AH-600',
+    brand: 'Unimed',
+    origin: 'Turkiye',
+    category: 'glycohemoglobin',
+    series: 'ah-600',
+    legacyCategory: 'ivd',
+    subCategory: 'Glycohemoglobin (HbA1c)',
+    formalName: 'Automated HPLC Glycohemoglobin (HbA1c) Analyzers',
+    image: 'images/products/unimed-ah600.png',
+    description: 'High-Performance Liquid Chromatography (HPLC) Automated Glycohemoglobin Analyzer - Gold-standard HbA1c diagnostic system with high-capacity continuous sample autoloader for hospital central laboratories.',
+    features: [
+      'Gold standard High-Performance Liquid Chromatography (HPLC) methodology',
+      'Direct measurement of stable HbA1c with NGSP and IFCC global standardization',
+      'Automated 50-tube walkaway autoloader with continuous sample rack feed',
+      'Dual sample aspiration modes: whole blood and pre-diluted micro-sampling',
+      'Integrated RFID reagent lot chip reader and barcode tube scanner',
+      'Full chromatographic curves display with automated variant peak detection'
+    ],
+    tags: ['HPLC Gold Standard', 'HbA1c Direct', '50-Tube Autoloader'],
+    badge: 'NEW',
+    quickFilters: ['new', 'ce', 'stat', 'bestseller'],
+    ceCertified: true
+  },
+  {
     id: 'u8-pro',
     model: 'U-8 PRO',
     brand: 'Unimed',
@@ -448,6 +559,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Glycohemoglobin (HbA1c)',
     formalName: 'Glycohemoglobin (HbA1c) & Hemoglobin Analyzers',
+    image: 'images/products/unimed-u8-pro.png',
     description: 'Professional HbA1c and Hemoglobin testing platform featuring HPLC-correlated optical technology, auto-calibration, and instant thermal printing.',
     features: [
       'Dual testing mode (Direct HbA1c % & Total Hemoglobin g/dL)',
@@ -471,6 +583,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Glycohemoglobin (HbA1c)',
     formalName: 'Glycohemoglobin (HbA1c) & Hemoglobin Analyzers',
+    image: 'images/products/unimed-u8.png',
     description: 'Microfluidic hemoglobin testing system for rapid point-of-care screening and primary healthcare community centers.',
     features: [
       'Direct photometric measurement of total hemoglobin and hematocrit',
@@ -498,6 +611,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Blood Gas',
     formalName: 'Critical Care Blood Gas Analyzers',
+    image: 'images/products/unimed-ubg-60.png',
     description: 'State-of-the-art critical care blood gas and electrolyte analyzer utilizing maintenance-free all-in-one reagent cartridges for rapid ICU and ER diagnostics.',
     features: [
       'Comprehensive parameter menu: pH, pCO2, pO2, Na+, K+, Cl-, Ca++, Glu, Lac, Hct',
@@ -525,6 +639,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Electrolyte',
     formalName: 'Ion Selective Electrode (ISE) Electrolyte Analyzers',
+    image: 'images/products/unimed-cee-5.png',
     description: 'User-friendly, maintenance-free ISE electrolyte analyzer with high-precision long-life electrodes and low consumable consumption.',
     features: [
       'Direct measurement of Na+, K+, Cl-, Ca++, and pH in serum, plasma, urine',
@@ -566,26 +681,53 @@ const productsData = [
     ceCertified: true
   },
   {
+    id: 'xray-gemss-spinel-3g',
+    model: 'Spinel 3G C-Arm',
+    brand: 'GEMSS Healthcare',
+    origin: 'Korea',
+    category: 'x-ray',
+    series: 'c-arm',
+    legacyCategory: 'imaging',
+    subCategory: 'Digital Radiography (X-Ray) Systems',
+    formalName: 'Surgical Mobile C-Arm Systems',
+    image: 'images/products/gemss-spinel-3g-c-arm.png',
+    description: 'Mobile surgical fluoroscopy C-Arm system featuring a 15 kW high-frequency x-ray generator, high-resolution image intensifier, and ergonomic dual-monitor workstation cart for orthopedic, spinal, and vascular procedures.',
+    features: [
+      '15 kW high-frequency x-ray generator with micro-focus rotating anode tube',
+      'High-performance 9-inch / 12-inch tri-mode image intensifier with high-definition camera',
+      'Dual 19-inch high-brightness surgical LCD monitors on dedicated mobile workstation cart',
+      'Advanced digital image processing: recursive filtering, edge enhancement, and roadmapping',
+      'Large free orbital rotation and wide C-arm depth for effortless patient positioning',
+      'Low-dose pulsed fluoroscopy modes with virtual collimator to minimize radiation exposure'
+    ],
+    tags: ['Surgical C-Arm', '15kW Generator', 'Low Dose Fluoroscopy'],
+    badge: 'BEST SELLER',
+    quickFilters: ['bestseller', 'ce', 'stat'],
+    ceCertified: true
+  },
+  {
     id: 'hf-525-plus',
-    model: 'HF-525 Plus',
+    model: 'HF-525 Plus (DR)',
     brand: 'ECORAY',
     origin: 'Korea',
     category: 'x-ray',
     series: 'floor',
     legacyCategory: 'imaging',
     subCategory: 'Digital Radiography (X-Ray) Systems',
-    formalName: 'Digital Radiography (X-Ray) Systems',
-    description: 'High-frequency digital radiography system with floor-mounted tube stand and four-way floating electromagnetic tabletop.',
+    formalName: 'Floor-Mounted Digital Radiography Systems',
+    image: 'images/products/ecoray-hf525-plus.png',
+    description: 'High-frequency floor-mounted digital radiography system equipped with a heavy-duty 4-way floating tabletop, vertical Bucky wall stand, and high-sensitivity 17x17 inch CsI flat-panel detector for continuous clinical radiography.',
     features: [
-      '50 kW high-frequency x-ray generator with micro-focus tube',
-      'Heavy-duty 4-way floating tabletop with electromagnetic brakes (300kg limit)',
-      'Anatomical programming (APR) with 700+ examination presets',
-      'Digital flat-panel detector retrofit ready with acquisition console',
-      'Durable, rugged build designed for continuous high-patient throughput'
+      '50 kW high-frequency x-ray generator with micro-focus rotating anode tube',
+      'Heavy-duty 4-way floating tabletop with electromagnetic brakes (300kg weight limit)',
+      'High-sensitivity 17x17 inch CsI wireless digital flat-panel detector (FPD)',
+      'Motorized vertical grid Bucky wall stand with counter-balanced movement',
+      'Anatomical Programming (APR) with 700+ examination presets and instant preview',
+      'Durable, rugged build designed for continuous high-patient hospital throughput'
     ],
-    tags: ['Floor Radiography', '50kW Generator', '4-Way Floating'],
-    badge: null,
-    quickFilters: ['ce'],
+    tags: ['Floor-Mounted DR', '50kW Generator', 'CsI Flat Panel'],
+    badge: 'BEST SELLER',
+    quickFilters: ['bestseller', 'ce'],
     ceCertified: true
   },
   {
@@ -963,6 +1105,85 @@ const productsData = [
     tags: ['4-Plate ELISA', 'Automated Washer', 'Liquid Handling'],
     badge: null,
     quickFilters: ['ce'],
+    ceCertified: true
+  },
+
+  // =========================================================================
+  // 15. ENDOSCOPY & SURGICAL SYSTEMS
+  // =========================================================================
+  {
+    id: 'endo-olympus-evis',
+    model: 'Olympus EVIS',
+    brand: 'Olympus',
+    origin: 'Japan',
+    category: 'endoscopy',
+    series: 'video-endoscopy',
+    legacyCategory: 'imaging',
+    subCategory: 'Endoscopy & Surgical Systems',
+    formalName: 'HD Video Endoscopy Workstation Systems',
+    image: 'images/products/olympus-evis.png',
+    description: 'High-Definition video endoscopy workstation featuring advanced Narrow Band Imaging (NBI) optical chromoendoscopy, dual-focus mucosal inspection, and high-intensity illumination for precise gastrointestinal diagnostics.',
+    features: [
+      'HDTV 1080p high-definition video processing unit with digital image optimization',
+      'Narrow Band Imaging (NBI) optical chromoendoscopy for early cancer & lesion detection',
+      'Dual-focus optical switchable near-field (2mm) and normal field examination',
+      'Auxiliary water jet function for maintaining continuous crystal-clear visual field',
+      'Full compatibility with Olympus EVIS gastrointestinal, pediatric, and adult endoscopes',
+      'Ergonomic mobile workstation cart with integrated digital archiving and report generation'
+    ],
+    tags: ['HD Video Endoscopy', 'NBI Technology', 'Dual Focus Optics'],
+    badge: 'BEST SELLER',
+    quickFilters: ['bestseller', 'ce', 'stat'],
+    ceCertified: true
+  },
+  {
+    id: 'endo-olympus-ebus',
+    model: 'Olympus EBUS System',
+    brand: 'Olympus',
+    origin: 'Japan',
+    category: 'endoscopy',
+    series: 'ebus',
+    legacyCategory: 'imaging',
+    subCategory: 'Endoscopy & Surgical Systems',
+    formalName: 'Endobronchial Ultrasound (EBUS) Systems',
+    image: 'images/products/olympus-ebus-system.png',
+    description: 'Specialized endobronchial ultrasound platform combining a curved linear array ultrasound bronchoscope and EU-ME2 processor for real-time EBUS-TBNA lymph node staging and peripheral pulmonary diagnostics.',
+    features: [
+      'Dedicated ultrasound bronchoscope with 30° forward-oblique endoscopic optics',
+      'Curved Linear Array (CP-EBUS) transducer with Color and Power Doppler modes',
+      'Real-time ultrasound guidance for Transbronchial Needle Aspiration (EBUS-TBNA)',
+      'High-resolution EU-ME2 compact ultrasound processor mounted on mobile trolley',
+      'Exceptional puncture needle visualization with dedicated ProCore and ViziShot needles',
+      'Radial miniature probe support for peripheral lung nodule localization'
+    ],
+    tags: ['EBUS-TBNA', 'Color Doppler Ultrasound', 'Lymph Node Staging'],
+    badge: 'NEW',
+    quickFilters: ['new', 'ce', 'stat'],
+    ceCertified: true
+  },
+  {
+    id: 'endo-olympus-esg-150',
+    model: 'Olympus Diathermy ESG-150',
+    brand: 'Olympus',
+    origin: 'Japan',
+    category: 'endoscopy',
+    series: 'electrosurgery',
+    legacyCategory: 'lifesupport',
+    subCategory: 'Endoscopy & Surgical Systems',
+    formalName: 'Electrosurgical Diathermy Generators',
+    image: 'images/products/olympus-diathermy-esg-150.png',
+    description: 'Compact, high-precision electrosurgical diathermy unit engineered for flexible endoscopy and minor surgery, equipped with Fast PulseCut for clean polypectomy and smart tissue impedance sensing.',
+    features: [
+      'Fast PulseCut mode for clean, controlled endoscopic polypectomy and papillotomy',
+      'ForcedCoag and SoftCoag modes for instantaneous, reliable hemostasis',
+      'Smart Tissue Impedance Sensing with automatic real-time HF power regulation',
+      'High-contrast digital touchscreen interface with customizable clinical presets',
+      'Dedicated Bipolar and Monopolar instrument sockets with Contact Quality Monitoring',
+      'Compact chassis specifically sized for standard endoscopic trolley stack shelves'
+    ],
+    tags: ['PulseCut Polypectomy', 'Tissue Impedance Sensing', 'Touchscreen Interface'],
+    badge: 'NEW',
+    quickFilters: ['new', 'ce'],
     ceCertified: true
   }
 ];
@@ -1343,7 +1564,7 @@ function renderCatalog(filteredProducts, isAppend = false) {
     html += `
       <div class="product-card" data-id="${product.id}">
         <div class="product-img-box">
-          ${getProductSVG(product)}
+          ${product.image ? `<img src="${product.image}" alt="${product.model}" class="product-real-img" loading="lazy">` : getProductSVG(product)}
           ${badgeHTML}
           <div class="product-origin-badge">${product.origin}</div>
         </div>
@@ -1405,10 +1626,12 @@ function matchCategory(product, cat, subCat = 'all') {
   let matchesCat = false;
   if (cat === product.category) {
     matchesCat = true;
+  } else if (cat === 'endoscopy') {
+    matchesCat = product.category === 'endoscopy';
   } else if (cat === 'ivd') {
     matchesCat = ['clia', 'hematology', 'modular-automation', 'urinalysis-feces', 'glycohemoglobin', 'blood-gas', 'electrolyte', 'poct'].includes(product.category) || product.legacyCategory === 'ivd';
   } else if (cat === 'imaging') {
-    matchesCat = ['ct-scan', 'mri-scan', 'x-ray', 'ultrasound'].includes(product.category) || product.legacyCategory === 'imaging';
+    matchesCat = ['ct-scan', 'mri-scan', 'x-ray', 'ultrasound', 'endoscopy'].includes(product.category) || product.legacyCategory === 'imaging';
   } else if (cat === 'hemodialysis') {
     matchesCat = product.category === 'hemodialysis' || product.legacyCategory === 'hemodialysis';
   } else if (cat === 'lifesupport') {
@@ -1432,7 +1655,7 @@ function matchQuickFilter(product, filter) {
 function applyFilters() {
   let filtered = productsData.filter(product => {
     const matchesCat = matchCategory(product, activeCategory, activeSubCategory);
-    const matchesBrand = activeBrand === 'all' || product.brand.toLowerCase() === activeBrand.toLowerCase();
+    const matchesBrand = activeBrand === 'all' || product.brand.toLowerCase().includes(activeBrand.toLowerCase()) || activeBrand.toLowerCase().includes(product.brand.toLowerCase());
     const matchesQuick = matchQuickFilter(product, activeQuickFilter);
     
     const term = searchQuery.toLowerCase().trim();
@@ -1706,7 +1929,14 @@ function openSpecModal(productId) {
     featuresHTML += `<li style="display:flex; align-items:flex-start; gap:8px;"><span style="color:#008cd6; font-weight:bold;">✓</span> <span>${f}</span></li>`;
   });
 
+  const imagePreviewHTML = product.image ? `
+    <div style="text-align: center; margin-bottom: 20px; padding: 16px; background: rgba(255,255,255,0.06); border-radius: 14px; border: 1px solid rgba(255,255,255,0.12);">
+      <img src="${product.image}" alt="${product.model}" style="max-height: 200px; max-width: 100%; object-fit: contain; filter: drop-shadow(0 6px 16px rgba(0,0,0,0.35));">
+    </div>
+  ` : '';
+
   details.innerHTML = `
+    ${imagePreviewHTML}
     <div style="margin-bottom: 20px; font-size: 0.92rem; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 16px;">
       <div style="margin-bottom: 6px;"><strong>Formal Classification:</strong> <span style="color:#38bdf8;">${product.formalName || product.subCategory}</span></div>
       <div style="margin-bottom: 6px;"><strong>Manufacturer / Brand:</strong> ${product.brand} (${product.origin})</div>
@@ -1784,7 +2014,7 @@ function updateFilterCounts() {
     if (['clia', 'hematology', 'modular-automation', 'urinalysis-feces', 'glycohemoglobin', 'blood-gas', 'electrolyte', 'poct'].includes(product.category)) {
       acc.ivd = (acc.ivd || 0) + 1;
     }
-    if (['ct-scan', 'mri-scan', 'x-ray', 'ultrasound'].includes(product.category)) {
+    if (['ct-scan', 'mri-scan', 'x-ray', 'ultrasound', 'endoscopy'].includes(product.category)) {
       acc.imaging = (acc.imaging || 0) + 1;
     }
     return acc;
@@ -1803,6 +2033,7 @@ function updateFilterCounts() {
     'mri-scan': 'count-mri-scan',
     'x-ray': 'count-x-ray',
     'ultrasound': 'count-ultrasound',
+    'endoscopy': 'count-endoscopy',
     'poct': 'count-poct',
     'hemodialysis': 'count-hemo',
     'lifesupport': 'count-lifesupport',
