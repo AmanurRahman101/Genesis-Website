@@ -83,30 +83,6 @@ const productsData = [
     quickFilters: ['bestseller', 'ce', 'stat'],
     ceCertified: true
   },
-  {
-    id: 'ct-precision-32',
-    model: 'Precision 32 CT',
-    brand: 'ECORAY',
-    origin: 'Korea',
-    category: 'ct-scan',
-    series: '32-slice',
-    legacyCategory: 'imaging',
-    subCategory: 'Computed Tomography (CT) Systems',
-    formalName: 'Computed Tomography (CT) Systems',
-    description: '32-Slice Multi-Detector Clinical Diagnostic CT Scanner providing reliable 24/7 uptime, exceptional image clarity, and low lifecycle operating costs for regional imaging centers.',
-    features: [
-      '32 Multi-detector row configuration',
-      'Micro-beam low-scatter collimation optics',
-      'Instant image reconstruction (up to 30 images/sec)',
-      'Energy-efficient green standby sleep cycle',
-      'Intuitive clinical workflow touchscreen console',
-      'Compact siting footprint suitable for 18 sqm scan rooms'
-    ],
-    tags: ['32-Slice', 'Energy Efficient', 'Compact Siting'],
-    badge: null,
-    quickFilters: ['ce'],
-    ceCertified: true
-  },
 
   // =========================================================================
   // 2. MAGNETIC RESONANCE IMAGING (MRI) SYSTEMS - Formal Name
@@ -121,7 +97,7 @@ const productsData = [
     legacyCategory: 'imaging',
     subCategory: 'Magnetic Resonance Imaging (MRI) Systems',
     formalName: '3.0 Tesla High-Field MRI Systems',
-    image: 'images/products/canon-vantage-galan-3t.png',
+    image: 'images/products/canon-vantage-galan-3t.png?v=canon_galan_user_render',
     description: 'Flagship 3.0 Tesla high-field clinical MRI scanner featuring Pianissimo Zen whisper-quiet scanning technology, a wide 71 cm patient bore, and AiCE AI noise-reduction reconstruction for ultra-fast, motion-free imaging.',
     features: [
       '3.0 Tesla ultra-homogeneous superconducting magnet with active shielding',
@@ -667,6 +643,7 @@ const productsData = [
     legacyCategory: 'imaging',
     subCategory: 'Digital Radiography (X-Ray) Systems',
     formalName: 'Digital Radiography (X-Ray) Systems',
+    image: 'images/products/ecoray-hf525-plus.png',
     description: 'Premium ceiling-suspension digital X-Ray system for high-volume imaging centers, offering automated positioning and dual flat-panel wireless detectors.',
     features: [
       'Ceiling-suspended tube stand with fully automated motorized auto-tracking',
@@ -767,6 +744,7 @@ const productsData = [
     legacyCategory: 'imaging',
     subCategory: 'Diagnostic Ultrasound Systems',
     formalName: 'Diagnostic Ultrasound Systems',
+    image: 'images/products/resona-r9.png',
     description: 'Flagship premium color Doppler ultrasound system powered by ZST+ Zone Sonography, delivering revolutionary image clarity, elastography, and hemodynamic quantification.',
     features: [
       'V-Flow microvascular hemodynamics quantification with vector flow',
@@ -790,6 +768,7 @@ const productsData = [
     legacyCategory: 'imaging',
     subCategory: 'Diagnostic Ultrasound Systems',
     formalName: 'Diagnostic Ultrasound Systems',
+    image: 'images/products/consona-n8.png',
     description: 'Premium color Doppler system featuring high-density single-crystal transducers and Smart Scene 3D cardiac detection for cardiology, OB/GYN, and radiology.',
     features: [
       'Single-crystal transducer support with Sound Speed Compensation',
@@ -813,6 +792,7 @@ const productsData = [
     legacyCategory: 'imaging',
     subCategory: 'Diagnostic Ultrasound Systems',
     formalName: 'Diagnostic Ultrasound Systems',
+    image: 'images/products/consona-n5.png',
     description: 'Core-tier diagnostic ultrasound scanner built on the advanced ZST+ platform, delivering exceptional spatial resolution across shared clinical services.',
     features: [
       'ZST+ Zone Sonography Technology for instantaneous focal sharpness',
@@ -835,6 +815,7 @@ const productsData = [
     legacyCategory: 'imaging',
     subCategory: 'Diagnostic Ultrasound Systems',
     formalName: 'Dedicated Liver Ultrasound & Elastography Systems',
+    image: 'images/products/hepatus-6.png',
     description: 'Specialized liver diagnostic ultrasound system offering non-invasive transient elastography (FibroScan alternative), color Doppler, and liver steatosis grading.',
     features: [
       'LiaQ Shearwave Liver stiffness quantification (kPa measurement)',
@@ -857,6 +838,7 @@ const productsData = [
     legacyCategory: 'imaging',
     subCategory: 'Diagnostic Ultrasound Systems',
     formalName: 'Portable Diagnostic Ultrasound Scanners',
+    image: 'images/products/dp-30.png',
     description: 'High-performance portable ultrasound system with quick startup, PW Doppler, and rechargeable battery for field and bedside examinations.',
     features: [
       'Weight under 5.5 kg with durable magnesium-alloy chassis',
@@ -883,6 +865,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Point-of-Care Testing (POCT)',
     formalName: 'Automated Point-of-Care Immunoassay Analyzers',
+    image: 'images/products/boditech-afias-10.png',
     description: 'Flagship 10-channel fluorescent immunoassay POCT analyzer delivering high-throughput rapid assays for hospital emergency rooms and cardiology departments.',
     features: [
       '10 independent parallel testing channels for high emergency throughput',
@@ -906,6 +889,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Point-of-Care Testing (POCT)',
     formalName: 'Automated Point-of-Care Immunoassay Analyzers',
+    image: 'images/products/boditech-afias-6.png',
     description: 'Automated 6-channel POCT analyzer allowing 6 simultaneous parallel tests for diverse analytes with zero reagent waste.',
     features: [
       '6 parallel test slots for flexible multi-analyte testing',
@@ -928,6 +912,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Point-of-Care Testing (POCT)',
     formalName: 'Continuous-Loading Automated ESR Analyzers',
+    image: 'images/products/alcor-ised-pro.png',
     description: 'High-throughput automated Erythrocyte Sedimentation Rate (ESR) analyzer featuring continuous loading capacity for busy hospital core laboratories.',
     features: [
       'Throughput up to 180 tests/hour',
@@ -951,6 +936,7 @@ const productsData = [
     legacyCategory: 'ivd',
     subCategory: 'Point-of-Care Testing (POCT)',
     formalName: 'Rapid Erythrocyte Sedimentation Rate (ESR) Analyzers',
+    image: 'images/products/alcor-miniised.png',
     description: 'Single-sample ESR analyzer providing accurate results in 15 seconds directly from primary EDTA blood tubes with zero reagent waste.',
     features: [
       'Accurate results in 15 seconds',
@@ -1049,6 +1035,7 @@ const productsData = [
     legacyCategory: 'lifesupport',
     subCategory: 'Patient Care & Life Support',
     formalName: 'Modular Patient Monitoring & Life Support Systems',
+    image: 'images/products/benevision-n17.png',
     description: 'Modular high-acuity patient monitor featuring a 17-inch multi-touch display, multi-parameter plug-and-play modules, and clinical decision support tools.',
     features: [
       '17-inch anti-glare capacitive multi-touch clinical display',
@@ -1072,6 +1059,7 @@ const productsData = [
     legacyCategory: 'lifesupport',
     subCategory: 'Patient Care & Life Support',
     formalName: 'Critical Care ICU Mechanical Ventilators',
+    image: 'images/products/sv300.png',
     description: 'Comprehensive high-performance mechanical ventilator designed for adult, pediatric, and neonatal ICU and intermediate respiratory care.',
     features: [
       'Invasive and non-invasive ventilation modes (CPAP/PSV, DuoLevel, PRVC, APRV)',
@@ -1095,6 +1083,7 @@ const productsData = [
     legacyCategory: 'lifesupport',
     subCategory: 'Patient Care & Life Support',
     formalName: 'Automated ELISA Microplate Processing Systems',
+    image: 'images/products/mago-4.png',
     description: 'Fully automated ELISA processor capable of reading, washing, dispensing, and incubating complete 4-plate immunoassay panels simultaneously.',
     features: [
       '4-plate parallel processing capacity with individual thermal incubators',
@@ -1540,54 +1529,38 @@ function renderCatalog(filteredProducts, isAppend = false) {
   
   let html = '';
   itemsToDisplay.forEach(product => {
-    // Badge logic: 'NEW' (green), 'BEST SELLER' (gold), or null
+    // Badge logic: 'NEW' or 'BEST SELLER'
     let badgeHTML = '';
     if (product.badge === 'NEW') {
-      badgeHTML = `<span class="product-badge badge-new">NEW</span>`;
+      badgeHTML = `<span class="product-badge badge-new">New</span>`;
     } else if (product.badge === 'BEST SELLER') {
-      badgeHTML = `<span class="product-badge badge-bestseller">BEST SELLER</span>`;
+      badgeHTML = `<span class="product-badge badge-bestseller">Best Seller</span>`;
     }
 
-    // Category display name
-    const categoryUpper = (product.subCategory || product.category).toUpperCase();
-
-    // Feature tags pills (like Unimed)
-    let tagsHTML = '';
-    if (product.tags && product.tags.length > 0) {
-      tagsHTML = product.tags.map(tag => `
-        <span class="feature-tag">
-          ${tag}
-        </span>
-      `).join('');
-    }
+    const subTitle = product.formalName || product.subCategory || product.category;
 
     html += `
-      <div class="product-card" data-id="${product.id}">
-        <div class="product-img-box">
+      <div class="product-card" data-id="${product.id}" onclick="window.location.href='product-detail.html?id=${encodeURIComponent(product.id)}'">
+        <div class="product-img-box" title="View ${product.model} details">
           ${product.image ? `<img src="${product.image}" alt="${product.model}" class="product-real-img" loading="lazy">` : getProductSVG(product)}
           ${badgeHTML}
-          <div class="product-origin-badge">${product.origin}</div>
+          <div class="product-floating-view">
+            <span>View Details</span>
+            <svg class="view-arrow" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
         </div>
 
         <div class="product-info-box">
-          <div class="product-category-name">${categoryUpper}</div>
-          <h3 class="product-model-name">${product.model}</h3>
-          <div class="product-brand-line">Brand: <strong>${product.brand}</strong></div>
-          <p class="product-desc-text">
-            ${product.description}
-          </p>
-
-          <div class="product-tags-row">
-            ${tagsHTML}
+          <div class="product-brand-meta">
+            <span class="product-brand-name">${product.brand}</span>
+            <span class="meta-dot">·</span>
+            <span class="product-origin-name">${product.origin}</span>
           </div>
 
-          <div class="product-card-footer">
-            <span class="cert-pill">CE CERTIFIED</span>
-            <div class="product-action-group">
-              <button class="product-spec-btn" onclick="openSpecModal('${product.id}')" type="button">Specs</button>
-              <button class="product-card-cta" onclick="openEnquiryModal('${product.model}', '${product.brand}')" type="button">Quote</button>
-            </div>
-          </div>
+          <h3 class="product-model-name" title="View ${product.model} details">${product.model}</h3>
+          <div class="product-sub-title" title="${subTitle}">${subTitle}</div>
         </div>
       </div>
     `;
@@ -1802,6 +1775,20 @@ function setupFilterListeners() {
         header.setAttribute('aria-expanded', 'true');
         activeCategory = category;
 
+        // If a brand filter is active and has no products in this newly selected category, gracefully reset brand to 'all'
+        if (activeBrand !== 'all') {
+          const hasMatch = productsData.some(p => 
+            matchCategory(p, activeCategory, 'all') &&
+            (p.brand.toLowerCase().includes(activeBrand.toLowerCase()) || activeBrand.toLowerCase().includes(p.brand.toLowerCase()))
+          );
+          if (!hasMatch) {
+            activeBrand = 'all';
+            document.querySelectorAll('[data-filter-brand]').forEach(b => {
+              b.classList.toggle('active', b.getAttribute('data-filter-brand') === 'all');
+            });
+          }
+        }
+
         // Reset subcategory within this accordion to 'all' or keep existing active
         const activeSubBtn = parentItem.querySelector('.subcat-btn.active');
         activeSubCategory = activeSubBtn ? (activeSubBtn.getAttribute('data-sub') || 'all') : 'all';
@@ -1853,6 +1840,21 @@ function setupFilterListeners() {
 
       activeCategory = cat;
       activeSubCategory = sub;
+
+      // If a brand is active and has no products in this subcategory, gracefully reset brand to 'all'
+      if (activeBrand !== 'all') {
+        const hasMatch = productsData.some(p => 
+          matchCategory(p, activeCategory, activeSubCategory) &&
+          (p.brand.toLowerCase().includes(activeBrand.toLowerCase()) || activeBrand.toLowerCase().includes(p.brand.toLowerCase()))
+        );
+        if (!hasMatch) {
+          activeBrand = 'all';
+          document.querySelectorAll('[data-filter-brand]').forEach(b => {
+            b.classList.toggle('active', b.getAttribute('data-filter-brand') === 'all');
+          });
+        }
+      }
+
       visibleCount = ITEMS_PER_PAGE;
       applyFilters();
     });
@@ -1870,13 +1872,37 @@ function setupFilterListeners() {
     });
   });
 
-  // 4. Manufacturer / Brand buttons
+  // 4. Manufacturer / Brand buttons (Filter by Company)
   const brandButtons = document.querySelectorAll('[data-filter-brand]');
   brandButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       brandButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeBrand = btn.getAttribute('data-filter-brand');
+
+      // If activeCategory is set and has no products for this brand, gracefully reset category to 'all'
+      if (activeCategory !== 'all' && activeBrand !== 'all') {
+        const hasMatch = productsData.some(p => 
+          matchCategory(p, activeCategory, activeSubCategory) &&
+          (p.brand.toLowerCase().includes(activeBrand.toLowerCase()) || activeBrand.toLowerCase().includes(p.brand.toLowerCase()))
+        );
+        if (!hasMatch) {
+          activeCategory = 'all';
+          activeSubCategory = 'all';
+          document.querySelectorAll('.category-accordion-item').forEach(item => {
+            item.classList.remove('open', 'active');
+          });
+          document.querySelectorAll('.cat-accordion-header').forEach(header => {
+            header.setAttribute('aria-expanded', 'false');
+            header.classList.remove('active-all');
+          });
+          const allHeader = document.querySelector('.cat-accordion-header[data-category="all"]');
+          if (allHeader) allHeader.classList.add('active-all');
+          const allItem = document.querySelector('.category-accordion-item[data-category="all"]');
+          if (allItem) allItem.classList.add('active');
+        }
+      }
+
       visibleCount = ITEMS_PER_PAGE;
       applyFilters();
     });
@@ -1984,6 +2010,8 @@ window.openSpecModal = openSpecModal;
 window.openEnquiryModal = openEnquiryModal;
 window.closeModal = closeModal;
 window.resetAllFilters = resetAllFilters;
+window.productsData = productsData;
+window.getProductSVG = getProductSVG;
 
 // 7. Initialize Catalog & URL Query Handling
 document.addEventListener('DOMContentLoaded', () => {
@@ -1994,6 +2022,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const requestedCategory = urlParams.get('cat');
     const requestedSub = urlParams.get('sub') || 'all';
+    const requestedBrand = urlParams.get('brand') || urlParams.get('company');
+
+    if (requestedBrand) {
+      const brandBtn = document.querySelector(`[data-filter-brand="${requestedBrand}"]`) ||
+                       Array.from(document.querySelectorAll('[data-filter-brand]')).find(b => b.getAttribute('data-filter-brand').toLowerCase() === requestedBrand.toLowerCase());
+      if (brandBtn) {
+        document.querySelectorAll('[data-filter-brand]').forEach(b => b.classList.remove('active'));
+        brandBtn.classList.add('active');
+        activeBrand = brandBtn.getAttribute('data-filter-brand');
+      }
+    }
 
     if (requestedCategory) {
       selectCategory(requestedCategory, requestedSub);

@@ -71,7 +71,7 @@
       corePlugins: { preflight: false },
     };
   </script>
-  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body class="catalog-page-body font-sans antialiased">
 
@@ -277,7 +277,6 @@
                   <li><button class="subcat-btn" data-cat="ct-scan" data-sub="uhr" type="button">Ultra-High Resolution (UHR)</button></li>
                   <li><button class="subcat-btn" data-cat="ct-scan" data-sub="128-slice" type="button">128-Slice Series</button></li>
                   <li><button class="subcat-btn" data-cat="ct-scan" data-sub="64-slice" type="button">64-Slice Series</button></li>
-                  <li><button class="subcat-btn" data-cat="ct-scan" data-sub="32-slice" type="button">32-Slice Series</button></li>
                 </ul>
               </div>
             </div>
@@ -417,6 +416,30 @@
           </div>
         </div>
 
+        <!-- Filter by Company (Manufacturers) -->
+        <div class="filter-group manufacturers-section">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.65rem;">
+            <h3 class="filter-subtitle" style="margin-bottom: 0; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="building-2" style="width: 15px; height: 15px; color: #008cd6;"></i>
+              <span>By Company</span>
+            </h3>
+            <span style="font-size: 0.72rem; color: #64748b; font-weight: 500;">10 Partners</span>
+          </div>
+          <div class="filter-options manufacturer-pills">
+            <button class="brand-pill active" data-filter-brand="all" type="button">All Companies</button>
+            <button class="brand-pill" data-filter-brand="Unimed" type="button">Unimed (Turkiye)</button>
+            <button class="brand-pill" data-filter-brand="Canon" type="button">Canon (Japan)</button>
+            <button class="brand-pill" data-filter-brand="Olympus" type="button">Olympus (Japan)</button>
+            <button class="brand-pill" data-filter-brand="GEMSS" type="button">GEMSS (Korea)</button>
+            <button class="brand-pill" data-filter-brand="ECORAY" type="button">ECORAY (Korea)</button>
+            <button class="brand-pill" data-filter-brand="Mindray" type="button">Mindray (China)</button>
+            <button class="brand-pill" data-filter-brand="Genesis Healthcare" type="button">Genesis Healthcare</button>
+            <button class="brand-pill" data-filter-brand="Boditech" type="button">Boditech (Korea)</button>
+            <button class="brand-pill" data-filter-brand="ALCOR" type="button">ALCOR (USA)</button>
+            <button class="brand-pill" data-filter-brand="Eurospital" type="button">Eurospital (Italy)</button>
+          </div>
+        </div>
+
         <!-- Unimed-Style Quick Filters -->
         <div class="filter-group quick-filters-section">
           <h3 class="quick-filters-title">Quick Filters</h3>
@@ -465,61 +488,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Authorized Laboratory Test Panels (Clinical Chemistry) -->
-    <section class="test-panels-section" id="test-panels">
-      <div class="container">
-        <div class="section-title-wrapper text-center">
-          <span class="section-tag reveal">Clinical Chemistry</span>
-          <h2 class="section-title reveal">Authorized laboratory test panels</h2>
-          <p class="section-subtitle reveal">Reagent coverage supported across automated analyzers.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          <div class="soft-card reveal">
-            <h3 class="font-sans text-lg font-bold tracking-normal text-ink mb-4">CLIA Diagnostic Panels</h3>
-            <div class="grid grid-cols-2 gap-4 text-xs text-[var(--muted)]">
-              <div>
-                <h4 class="font-sans text-sm font-bold text-ink mb-2">Infectious Diseases</h4>
-                <ul class="space-y-1">
-                  <li>• HBsAg / HBsAb / HBeAg</li>
-                  <li>• HAV IgM / Anti-HCV</li>
-                  <li>• HIV Ag/Ab / Anti-TP</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-sans text-sm font-bold text-ink mb-2">Tumor Markers</h4>
-                <ul class="space-y-1">
-                  <li>• AFP / CEA / CA 125</li>
-                  <li>• Total PSA / Free PSA</li>
-                  <li>• CYFRA21-1 / proGRP</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="soft-card reveal">
-            <h3 class="font-sans text-lg font-bold tracking-normal text-ink mb-4">Biochemistry Panels</h3>
-            <div class="grid grid-cols-2 gap-4 text-xs text-[var(--muted)]">
-              <div>
-                <h4 class="font-sans text-sm font-bold text-ink mb-2">Hepatic (Liver)</h4>
-                <ul class="space-y-1">
-                  <li>• ALT / AST / ALP / GGT</li>
-                  <li>• TBIL / DBIL / TP / ALB</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-sans text-sm font-bold text-ink mb-2">Renal (Kidney)</h4>
-                <ul class="space-y-1">
-                  <li>• Creatinine (Cr) / Urea</li>
-                  <li>• Uric Acid (UA) / CysC</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="cta-sky">
       <h2 class="reveal">Need a custom tender quotation?</h2>
@@ -631,6 +599,6 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/products.js?v=5"></script>
+  <script src="js/products.js?v=9"></script>
 </body>
 </html>
